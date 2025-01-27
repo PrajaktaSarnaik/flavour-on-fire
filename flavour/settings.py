@@ -28,8 +28,8 @@ SECRET_KEY = 'django-insecure-p5)!5y$+k*(t%2$wxohpkthcuxd=g!mw5z%7n2i&u7@8)3p-g$
 DEBUG = False
 # DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-# ALLOWED_HOSTS = ['http://127.0.0.1:1234/recipe/', '.herokuapp.com']
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '.herokuapp.com').split(',')
+ALLOWED_HOSTS = ['', '.herokuapp.com']
+# ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '.herokuapp.com').split(',')
 
 
 # Application definition
