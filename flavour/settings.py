@@ -25,10 +25,10 @@ SECRET_KEY = 'django-insecure-p5)!5y$+k*(t%2$wxohpkthcuxd=g!mw5z%7n2i&u7@8)3p-g$
 # SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-p5)!5y$+k*(t%2$wxohpkthcuxd=g!mw5z%7n2i&u7@8)3p-g$')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 # DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://127.0.0.1:1234/recipe/', 'https://flavour-on-fire-1bb1fc2c2e8e.herokuapp.com/']
 # ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '.herokuapp.com').split(',')
 
 
