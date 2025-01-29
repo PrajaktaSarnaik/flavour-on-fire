@@ -1,3 +1,9 @@
+html,
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
 /*** Navbar ***/
 .nav-left, .nav-right {
     border-bottom: 1px solid lightgray; /* Light underline for left and right links */
@@ -61,6 +67,7 @@
 }
 
 /*** Hero Section ***/
+/* Ensure the carousel spans the full width of the screen */
 #heroCarousel {
     width: 100vw; /* Full viewport width */
     margin-left: calc(-50vw + 50%); /* Center the carousel */
@@ -68,23 +75,71 @@
 
 #heroCarousel .carousel-inner {
     width: 100%;
+    height: 100vh; /* Full height of the viewport */
 }
 
 #heroCarousel .carousel-item {
     display: flex;
+    flex-direction: column; /* Default to column for smaller screens */
     width: 100%;
+    height: 100%;
+    padding: 0; /* Remove padding */
 }
 
 #heroCarousel video {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio while covering the area */
 }
 
-.carousel-item .row {
-    width: 100%;
-    margin: 0;
+.carousel-item .flex-fill {
+    flex: 2; /* Give more space to the video */
 }
 
-.carousel-item .col-md-6 {
-    padding: 0;
+.carousel-item .d-flex {
+    flex: 1; /* Give less space to the text */
+    align-items:flex-start;
+    justify-content: center;
+    padding: 0; /* Remove padding */
+}
+
+/* Style the carousel indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10; /* Ensure indicators are above other elements */
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #000;
+    border: none;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-indicators button.active,
+.carousel-indicators button:hover {
+    opacity: 1;
+}
+
+
+
+/*** Media Queries ***/
+@media (min-width: 768px) {
+    #heroCarousel .carousel-item {
+        flex-direction: row; /* Change to row for larger screens */
+    }
+}
+@media (min-width: 1024px) {
+    #heroCarousel .carousel-item {
+        flex-direction: row; /* Change to row for larger screens */
+    }
 }
