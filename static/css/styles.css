@@ -1,0 +1,61 @@
+/*** Navbar ***/
+.nav-left, .nav-right {
+    border-bottom: 1px solid lightgray; /* Light underline for left and right links */
+}
+
+.nav-item.nav-link {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 15px; /* Add some padding to make space for the underline */
+}
+
+.nav-item.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px; /* Adjust the height of the underline */
+    background-color: black; /* Color of the underline */
+    transition: width 0.3s ease;
+}
+
+.nav-item.nav-link:hover::after {
+    width: 100%; /* Full width underline on hover */
+}
+/*** Logo ***/
+.logo-container {
+    position: relative;
+}
+
+.logo {
+    height: 100px; /* Adjust the height as needed */
+    width: 100px; /* Adjust the width as needed */
+    border-radius: 50%;
+    position: absolute;
+    top: -40px; /* Adjust the value to control how much the logo extends above the navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid white; /* Optional: Add a border to the logo */
+}
+
+/*** Sign up button ***/
+.signup-button {
+    height: 85px; /* Adjust the height as needed */
+    width: 85px; /* Adjust the width as needed */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid white; /* Optional: Add a border to the button */
+    background-color: #3a3737; /* Bootstrap primary color */
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: -30px; /* Adjust the value to control how much the button extends above the stripe */
+    margin-bottom: -30px; /* Adjust the value to control how much the button extends below the stripe */
+}
+
+.signup-button:hover {
+    background-color: #111111; /* Darker shade of the primary color */
+}

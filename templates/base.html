@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Flavour On Fire{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="alert alert-info text-center mb-0" role="alert">
+        
+        Join our foodie family! <a href="#" class="alert-link">Login</a> to unlock exclusive recipes.
+    </div>
+    <nav class="navbar navbar-expand-lg mt-5">
+        <div class="container">
+            <div class="navbar-nav mr-auto nav-left">
+                <a class="nav-item nav-link px-5" href="#">Left Link 1</a>
+                <a class="nav-item nav-link px-5" href="#">Left Link 2</a>
+            </div>
+            <a class="navbar-brand mx-auto logo-container" href="{% url 'home' %}">
+                <img src="{% static 'images\logo.png' %}" alt="Logo" class="logo">
+            </a>
+            <div class="navbar-nav ml-auto nav-right">
+                <a class="nav-item nav-link px-5" href="#">Right Link 1</a>
+                <a class="nav-item nav-link px-5" href="#">Right Link 2</a>
+            </div>
+        </div>
+    </nav>
+    <div class="alert alert-info text-left mb-5 mt-5 px-1" role="alert">
+        <div class="container">
+            Share your culinary creations! 
+            <a href="#" class="btn btn-primary signup-button">
+                Sign me up
+            </a>
+            Leave ratings, reviews and contribute to our growing community.
+        </div>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
