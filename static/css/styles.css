@@ -59,3 +59,32 @@
 .signup-button:hover {
     background-color: #111111; /* Darker shade of the primary color */
 }
+
+/*** Hero Section ***/
+#heroCarousel {
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(-50vw + 50%); /* Center the carousel */
+}
+
+#heroCarousel .carousel-inner {
+    width: 100%;
+}
+
+#heroCarousel .carousel-item {
+    display: flex;
+    width: 100%;
+}
+
+#heroCarousel video {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item .row {
+    width: 100%;
+    margin: 0;
+}
+
+.carousel-item .col-md-6 {
+    padding: 0;
+}
