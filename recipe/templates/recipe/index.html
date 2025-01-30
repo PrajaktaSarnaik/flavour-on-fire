@@ -4,102 +4,81 @@
 
 {% block title %}Home{% endblock %}
 
+{% block link %}
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
 {% block content %}
 <!-- *** Carousel Controls *** -->
-        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="d-flex flex-column flex-md-row w-100 vh-100">
-                        <div class="video-container">
-                            <video autoplay muted loop>
-                                <source src="{% static 'videos/coffee.mp4' %}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-        
-                        <div class="text-container d-flex align-items-center justify-content-center p-5">
-                            <div class="text-box text-center">
-                                <h1>Welcome to Flavour On Fire</h1>
-                                <p>Discover amazing recipes and share your culinary creations with our community. Join us and
-                                    become a part of our foodie family!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="d-flex flex-column flex-md-row w-100 vh-100">
-                        <div class="video-container">
-                            <video autoplay muted loop>
-                                <source src="{% static 'videos/coffee.mp4' %}" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-        
-                        <div class="text-container d-flex align-items-center justify-content-center p-5">
-                            <div class="text-box text-center">
-                                <h1>Carousel 2</h1>
-                                <p>Discover amazing recipes and share your culinary creations with our community. Join us and
-                                    become a part of our foodie family!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-            <!-- Indicators now properly placed BELOW the text -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-            </div>
-        </div>
-        
-{% endblock %}
-<!-- <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+<div id="videoCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
     <div class="carousel-inner">
-       
+
+        <!-- First Slide -->
         <div class="carousel-item active">
-            <div class="row w-100 m-0">
-                <div class="col-md-6 p-0">
-                    <video class="w-100" autoplay muted loop>
-                        <source src="{% static 'videos/coffee.mp4' %}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="col-md-6 d-flex align-items-center p-5">
-                    <div>
-                        <h1>Welcome to Flavour On Fire</h1>
-                        <p>Discover amazing recipes and share your culinary creations with our community. Join us and become a part of our foodie family!</p>
-                    </div>
-                </div>
+            <video class="w-100" autoplay muted loop>
+            <source src="{% static 'videos/coffee.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+            <h3>Slide 1 Title</h3>
+            <p>This is the text description for slide 1.</p>
             </div>
         </div>
-       
-        <div class="carousel-item active">
-            <div class="row w-100 m-0">
-                <div class="col-md-6 p-0">
-                    <video class="w-100" autoplay muted loop>
-                        <source src="{% static 'videos/coffee.mp4' %}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="col-md-6 d-flex align-items-center p-5">
-                    <div>
-                        <h1>Carousel 2</h1>
-                        <p>Discover amazing recipes and share your culinary creations with our community. Join us and become a part of our foodie family!</p>
-                    </div>
-                </div>
+
+        <!-- Second Slide -->
+        <div class="carousel-item">
+            <video class="w-100" autoplay muted loop>
+            <source src="{% static 'videos/coffee.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+            <h3>Slide 2 Title</h3>
+            <p>This is the text description for slide 2.</p>
             </div>
         </div>
+            <!-- Third Slide -->
+        <div class="carousel-item">
+            <video class="w-100" autoplay muted loop>
+            <source src="{% static 'videos/coffee.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+            <div class="carousel-caption d-none d-md-block">
+            <h3>Slide 3 Title</h3>
+            <p>This is the text description for slide 3.</p>
+            </div>
+        </div>
+
+        <!-- Fourth Slide -->
+        <!-- <div class="carousel-item">
+            <div class="col-md-6">
+                <video autoplay muted loop>
+                    <source src="{% static 'videos/coffee.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="col-md-6">
+                <div class="carousel-caption">
+                    <h3>Slide 4 Title</h3>
+                    <p>This is the text description for slide 4.</p>
+                </div>
+            </div>
+        </div> -->
+
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div> -->
+
+    <!-- Carousel Controls -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#videoCarousel" data-bs-slide-to="2"></button>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

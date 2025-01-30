@@ -68,51 +68,68 @@ body {
 
 /*** Hero Section ***/
 /* Ensure the carousel spans the full width of the screen */
-#heroCarousel {
-    width: 100vw; /* Full viewport width */
-    margin-left: calc(-50vw + 50%); /* Center the carousel */
-}
+/* #videoCarousel {
+    width: 100vw; 
+    margin-left: calc(-50vw + 50%); 
+} */
 
-#heroCarousel .carousel-inner {
+/* #videoCarousel .carousel-inner {
     width: 100%;
-    height: 100vh; /* Full height of the viewport */
-}
+    height: 100vh;
+} */
 
-#heroCarousel .carousel-item {
+/* #videoCarousel .carousel-item {
     display: flex;
-    flex-direction: column; /* Default to column for smaller screens */
+    flex-direction: column; 
+    width: 100%;
+} */
+
+.carousel-item{
+    height: 80vh;
+}
+
+.video-container {
+    flex: 1.5; /* Adjust height ratio for video */
+    display: flex;
+}
+
+.video-container video {
     width: 100%;
     height: 100%;
-    padding: 0; /* Remove padding */
+    object-fit: cover; /* Ensure it covers the container */
 }
 
-#heroCarousel video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Maintain aspect ratio while covering the area */
-}
-
-.carousel-item .flex-fill {
-    flex: 2; /* Give more space to the video */
-}
-
-.carousel-item .d-flex {
-    flex: 1; /* Give less space to the text */
-    align-items:flex-start;
+.text-container {
+    flex: 1; /* Give some height to text */
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 0; /* Remove padding */
+    padding: 20px;
 }
 
-/* Style the carousel indicators */
-.carousel-indicators {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Center text and ensure space for indicators */
+.text-box {
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+}
+
+/* Style the carousel indicators inside text box */
+/* .carousel-indicators {
+    position: relative;
+    bottom: -20px; 
     display: flex;
     justify-content: center;
     gap: 10px;
-    z-index: 10; /* Ensure indicators are above other elements */
+    margin-top: 20px; 
+} */
+
+.carousel-indicators {
+    position: absolute;
+    bottom: -20px; /* Adjust based on your design */
+    left: 50%;
+    transform: translateX(-125%);
+    z-index: 10;
 }
 
 .carousel-indicators button {
@@ -130,16 +147,15 @@ body {
     opacity: 1;
 }
 
-
-
 /*** Media Queries ***/
 @media (min-width: 768px) {
     #heroCarousel .carousel-item {
-        flex-direction: row; /* Change to row for larger screens */
+        flex-direction: row; /* Side-by-side layout for larger screens */
     }
 }
+
 @media (min-width: 1024px) {
     #heroCarousel .carousel-item {
-        flex-direction: row; /* Change to row for larger screens */
+        flex-direction: row;
     }
 }
