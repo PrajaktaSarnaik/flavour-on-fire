@@ -4,7 +4,22 @@ body {
     scroll-behavior: smooth;
 }
 
+.alert-info{
+    /* background: linear-gradient(135deg, #8B008B, #FF0080) !important; */
+    background: linear-gradient(135deg, #02AABD, #00CDAC) !important;
+    /* background: linear-gradient(135deg, #662D8C, #ED1E79) !important; */
+    /* --bs-alert-bg: #8ECAE6; */
+    color: black;
+    border: none;
+}
+
+.alert{
+    border-radius: 0;
+}
+
+
 /*** Navbar ***/
+
 .nav-left, .nav-right {
     border-bottom: 1px solid lightgray; /* Light underline for left and right links */
 }
@@ -229,10 +244,12 @@ body {
 
     /* Adjust text sizes for small screens */
     .carousel-caption h3 {
+        color:#000;
         font-size: 16px !important; /* Smaller font for readability */
     }
 
     .carousel-caption p {
+        color:#000;
         font-size: 12px !important;
     }
 }
