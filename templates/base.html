@@ -21,14 +21,14 @@
     <nav class="navbar navbar-expand-lg mt-5">
         <div class="container">
             <div class="navbar-nav mr-auto nav-left">
-                <a class="nav-item nav-link px-5" href="#">Left Link 1</a>
-                <a class="nav-item nav-link px-5" href="#">Left Link 2</a>
+                <a class="nav-item nav-link px-5" href="#"><strong>Recipes</strong></a>
+                <a class="nav-item nav-link px-5" href="#"><strong>Authors</strong></a>
             </div>
             <a class="navbar-brand mx-auto logo-container" href="{% url 'home' %}">
                 <img src="{% static 'images\logo.png' %}" alt="Logo" class="logo">
             </a>
             <div class="navbar-nav ml-auto nav-right">
-                <a class="nav-item nav-link px-5" href="#">Right Link 1</a>
+                <a class="nav-item nav-link px-5" href="#"><strong>Share your recipes</strong></a>
                 <a class="nav-item nav-link px-5" href="#">Right Link 2</a>
             </div>
         </div>
@@ -36,9 +36,10 @@
     <div class="alert alert-info text-left mb-4 mt-5 px-1" role="alert">
         <div class="container">
             Share your culinary creations! 
-            <a href="#" class="btn btn-primary signup-button">
+            <a href="#" class="btn btn-primary signup-button d-none d-md-inline-flex">
                 Sign me up
             </a>
+            <span class="d-inline d-md-none alert-link">Sign me up!</span>
             Leave ratings, reviews and contribute to our growing community.
         </div>
     </div>
