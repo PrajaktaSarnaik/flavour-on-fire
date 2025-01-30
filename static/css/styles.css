@@ -13,12 +13,22 @@ body {
     border: none;
 }
 
+.alert-link{
+    color: #eef0f3;
+    text-decoration: underline;
+}
+
 .alert{
     border-radius: 0;
 }
 
 
 /*** Navbar ***/
+
+.navbar{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
 
 .nav-left, .nav-right {
     border-bottom: 1px solid lightgray; /* Light underline for left and right links */
@@ -36,12 +46,14 @@ body {
     left: 0;
     bottom: 0;
     width: 0;
-    height: 3px; /* Adjust the height of the underline */
-    background-color: black; /* Color of the underline */
+    height: 4.5px; /* Adjust the height of the underline */
+    color:#000000;
+    background-color: #000000; /* Color of the underline */
     transition: width 0.3s ease;
 }
 
 .nav-item.nav-link:hover::after {
+    background-color: #ffb703; /* Bootstrap primary color */
     width: 100%; /* Full width underline on hover */
 }
 /*** Logo ***/
@@ -50,11 +62,11 @@ body {
 }
 
 .logo {
-    height: 100px; /* Adjust the height as needed */
-    width: 100px; /* Adjust the width as needed */
+    height: 150px; /* Adjust the height as needed */
+    width: 150px; /* Adjust the width as needed */
     border-radius: 50%;
     position: absolute;
-    top: -40px; /* Adjust the value to control how much the logo extends above the navbar */
+    top: -70px; /* Adjust the value to control how much the logo extends above the navbar */
     left: 50%;
     transform: translateX(-50%);
     border: 3px solid white; /* Optional: Add a border to the logo */
@@ -62,15 +74,16 @@ body {
 
 /*** Sign up button ***/
 .signup-button {
-    height: 85px; /* Adjust the height as needed */
-    width: 85px; /* Adjust the width as needed */
+    height: 95px; /* Adjust the height as needed */
+    width: 95px; /* Adjust the width as needed */
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: 1px solid white; /* Optional: Add a border to the button */
-    background-color: #3a3737; /* Bootstrap primary color */
-    color: white;
+    border: none; /* Optional: Add a border to the button */
+    background-color: #fbcb0c; /* Bootstrap primary color */
+    color: black;
+    /* transform: translateX(-120%); */
     text-decoration: none;
     transition: background-color 0.3s ease;
     margin-top: -30px; /* Adjust the value to control how much the button extends above the stripe */
@@ -258,7 +271,7 @@ body {
 
     /* For small devices */
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
     /* Ensure carousel indicators are positioned properly */
     .carousel-indicators {
         bottom: 115px; /* Adjust the position */
@@ -302,3 +315,4 @@ body {
         font-size: 14px !important;
     }
 }
+
