@@ -43,11 +43,11 @@ ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'cloudinary_storage',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'cloudinary',
     'recipe',
 ]
@@ -97,10 +97,10 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-# CSRF_TRUSTED_ORIGINS = [
-#     "https://*.codeinstitute-ide.net/",
-#     "https://*.herokuapp.com"
-# ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
