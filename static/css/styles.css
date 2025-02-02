@@ -5,11 +5,17 @@ body {
 }
 
 .alert-info{
-    /* background: linear-gradient(135deg, #8B008B, #FF0080) !important; */
-    background: linear-gradient(135deg, #02AABD, #00CDAC) !important;
-    /* background: linear-gradient(135deg, #662D8C, #ED1E79) !important; */
-    /* --bs-alert-bg: #8ECAE6; */
-    color: black;
+    /* background: linear-gradient(135deg, #02AABD, #00CDAC) !important; */
+    /* background: linear-gradient(135deg, #db522c, #F7B733) !important; */
+    /* background: linear-gradient(135deg, #ED1E79, #662D8C) !important; */
+    /* background: linear-gradient(135deg, #ed3938, #ffa12e) !important; */
+    /* background: linear-gradient(135deg,#ffa12e, #f1c40d) !important;  */
+    /* background: linear-gradient(135deg,#163a2a, #1fb7c8) !important;  */
+    --bs-alert-bg: #396962;
+    /* --bs-alert-bg: #002aff; */
+    /* color: #e8d5f6; */
+    /* color: #7a3b01; */
+    color: #d6f7ec;
     border: none;
 }
 
@@ -95,83 +101,36 @@ body {
 }
 
 /*** Hero Section ***/
-/* Ensure the carousel spans the full width of the screen */
-/* #videoCarousel {
-    width: 100vw; 
-    margin-left: calc(-50vw + 50%); 
-} */
 
-/* #videoCarousel .carousel-inner {
-    width: 100%;
-    height: 100vh;
-} */
 
-/* #videoCarousel .carousel-item {
-    display: flex;
-    flex-direction: column; 
-    width: 100%;
-} */
-
+/* ******************** */
 .carousel-item{
-    height: 80vh;
+    height: 60vh;
 }
 
-.video-container {
-    flex: 1.5; /* Adjust height ratio for video */
-    display: flex;
+.carousel-content{
+    background-color: blanchedalmond;
 }
-
-.video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure it covers the container */
-}
-
-.text-container {
-    flex: 1; /* Give some height to text */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Center text and ensure space for indicators */
-.text-box {
-    max-width: 600px;
-    text-align: center;
-    position: relative;
-}
-
-/* Style the carousel indicators inside text box */
-/* .carousel-indicators {
-    position: relative;
-    bottom: -20px; 
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px; 
-} */
 
 .carousel-indicators {
-    position: absolute;
-    bottom: -10px; /* Adjust based on your design */
-    left: 50%;
-    transform: translateX(-125%);
-    z-index: 10;
+    margin-top: 10px; /* Spacing below <h3> */
+    justify-content: center; /* Center the indicators */
+    gap: 8px; /* Space between indicators */
 }
 
 .carousel-indicators button {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: #000;
-    border: none;
-    opacity: 0.5;
+    background-color: black !important;
+    border: 2px solid black;
+    opacity: 0.7;
     transition: opacity 0.3s ease;
 }
 
 .carousel-indicators button.active,
 .carousel-indicators button:hover {
+    background-color: black;
     opacity: 1;
 }
 
