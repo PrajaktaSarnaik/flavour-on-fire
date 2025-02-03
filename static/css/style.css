@@ -11,7 +11,7 @@ body {
     /* background: linear-gradient(135deg, #ed3938, #ffa12e) !important; */
     /* background: linear-gradient(135deg,#ffa12e, #f1c40d) !important;  */
     /* background: linear-gradient(135deg,#163a2a, #1fb7c8) !important;  */
-    --bs-alert-bg: #396962;
+    --bs-alert-bg: #0c4956;
     /* --bs-alert-bg: #002aff; */
     /* color: #e8d5f6; */
     /* color: #7a3b01; */
@@ -26,6 +26,7 @@ body {
 
 .alert{
     border-radius: 0;
+    padding: 10px;
 }
 
 
@@ -109,7 +110,8 @@ body {
 }
 
 .carousel-content{
-    background-color: blanchedalmond;
+    /* background-color: #ffebcd; */
+    background: linear-gradient(135deg, #ffebcd, #f3d7d7);
 }
 
 .carousel-indicators {
@@ -182,14 +184,30 @@ body {
 /******* Recipe Posts *******/
 .recipe-link {
     text-decoration: none;
-    color: #445261;
+    color: #E84610;
 }
 
 .recipe-link:hover,
 .page-link {
-    color: #E84610;
+    color: #ffb703;
 }
 
+/* Recipe Entries Column */
+/* Recipe Entries Column */
+.recipe-entry .card-img-top {
+    width: 100%; /* Set the width to 100% of the parent element */
+    height: 300px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensure the image covers the area without stretching */
+}
+
+/* Limit introduction to 3 lines */
+.recipe-entry .introduction {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 /*********** Media Queries ************/
 
 @media (max-width: 767px) {

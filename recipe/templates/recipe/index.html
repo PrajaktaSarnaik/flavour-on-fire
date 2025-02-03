@@ -142,7 +142,7 @@
             <div class="row">
                 {% for recipe in recipe_list %}
                 <div class="col-md-4">
-                    <div class="card mb-4">
+                    <div class="card mb-4 recipe-entry">
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in recipe.featured_image.url %}
@@ -158,9 +158,11 @@
                             <a href="#" class="recipe-link">
                                 <h2 class="card-title">{{ recipe.recipe_title }}</h2>
                             </a>
+                            <p class="introduction">{{ recipe.introduction }}
+                                </p>
 
                             <hr />
-                            <p class="card-text text-muted h6">{{ recipe.created_on}}
+                            <p class="card-text text-muted h6">{{ recipe.get_diet_display}}
                             </p>
                         </div>
                     </div>
