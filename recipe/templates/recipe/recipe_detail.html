@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0 align-items-stretch">
+            <div class="col-md-6 d-flex">
+                <!-- Card Column -->
+                <div class="card mb-4 mt-3 left top flex-fill">
+                    <div class="card-body">
+                        <!-- The recipe content goes inside the card-text. -->
+                        <!-- Use the | safe filter inside the template tags -->
+                        <p class="card-text">
+                            {{ recipe.introduction | safe }}
+                            {{ recipe.ingredients | safe }}
+                            {{ recipe.instructions | safe }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 masthead-image d-flex">
+                <!-- Image Column -->
+                <img src="{{ recipe.featured_image.url }}" class="img-fluid" alt="{{ recipe.recipe_title }}">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
