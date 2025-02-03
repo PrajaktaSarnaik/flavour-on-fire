@@ -2,31 +2,45 @@
 {% load static %}
 
 
+<!-- Masthead Section -->
 <div class="masthead">
     <div class="container">
         <div class="row g-0 align-items-stretch">
-            <div class="col-md-6 d-flex">
-                <!-- Card Column -->
-                <div class="card mb-4 mt-3 left top flex-fill">
-                    <div class="card-body">
-                        <!-- The recipe content goes inside the card-text. -->
-                        <!-- Use the | safe filter inside the template tags -->
-                        <p class="card-text">
-                            {{ recipe.introduction | safe }}
-                            {{ recipe.ingredients | safe }}
-                            {{ recipe.instructions | safe }}
-                        </p>
+            <div class="col-md-12 d-flex flex-column">
+                <!-- Card Column: Text + Image Together -->
+                <div class="card mb-4 mt-3 left top flex-fill glow-card">
+                    <div class="row g-0">
+                        <!-- Text Column -->
+                        <div class="col-md-6 d-flex align-items-start justify-content-center">
+                            <div class="card-body p-4">
+
+                                <!-- Recipe title goes in these h1 tags -->
+                                <h1 class="recipe-title">{{ recipe.recipe_title }}</h1>
+                                <hr>
+                                <!-- Introduction Section -->
+                                <h5 class="card-title">Introduction</h5>
+                                <p class="card-text">{{ recipe.introduction | safe }}</p>
+                                <hr>
+                                <!-- Ingredients Section -->
+                                <h5 class="card-title">Ingredients</h5>
+                                <p class="card-text">{{ recipe.ingredients | safe }}</p>
+                                <hr>
+                                <!-- Instructions Section -->
+                                <h5 class="card-title">Instructions</h5>
+                                <p class="card-text">{{ recipe.instructions | safe }}</p>
+                            </div>
+                        </div>
+                        <!-- Image Column -->
+                        <div class="col-md-6 masthead-image">
+                            <img src="{{ recipe.featured_image.url }}" class="img-fluid"
+                                alt="{{ recipe.recipe_title }}">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 masthead-image d-flex">
-                <!-- Image Column -->
-                <img src="{{ recipe.featured_image.url }}" class="img-fluid" alt="{{ recipe.recipe_title }}">
             </div>
         </div>
     </div>
 </div>
-
 
 
 {% endblock content %}

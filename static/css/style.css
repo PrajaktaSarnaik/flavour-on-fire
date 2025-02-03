@@ -136,51 +136,7 @@ body {
     opacity: 1;
 }
 
-/*** Media Queries ***/
-/* For extra small devices */
 
-
-/* For small devices */
-
-/* @media (max-width: 767px) {
-    
-    .carousel-indicators {
-        bottom: 115px; 
-        
-    }
-
-    .carousel-indicators button {
-        width: 12px;
-        height: 12px;
-        background-color: white; 
-        border: 1px solid black;
-        opacity: 0.5;
-    }
-
-    .carousel-indicators button.active,
-    .carousel-indicators button:hover {
-        opacity: 1;
-    }
-
-    
-    .carousel-caption {
-        background: rgba(0, 0, 0, 0.5); 
-        padding: 10px;
-        border-radius: 5px;
-        bottom: 130px;
-        font-size: 14px;
-    }
-
-    .carousel-caption h3 {
-        font-size: 20px; 
-        
-    }
-
-    .carousel-caption p {
-        font-size: 16px; 
-        
-    }
-} */
 /******* Recipe Posts *******/
 .recipe-link {
     text-decoration: none;
@@ -210,6 +166,7 @@ body {
 }
 
 /*********Recipe Description***********/
+
 .masthead-image {
     display: flex;
     align-items: stretch;
