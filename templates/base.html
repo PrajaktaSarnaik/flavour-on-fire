@@ -22,10 +22,10 @@
     <div class="alert alert-info text-center mb-0 fs-5" role="alert">
         {% if user.is_authenticated %}
                 Welcome, {{ user.username }}! 
-                <a href="{{ logout_url }}" class="alert-link fs-5">Logout</a>
+                <a href="{{ logout_url }}" class="alert-link fs-5">Sign Out</a>
             {% else %} 
         Join our foodie family! 
-        <a href="{% url 'account_login' %}" class="alert-link fs-5">Login</a> to unlock exclusive recipes.
+        <a href="{% url 'account_login' %}" class="alert-link fs-5">Sign In</a> to unlock exclusive recipes.
         {% endif %}
     </div>
     <div class="navbar-background">
@@ -62,7 +62,7 @@
         </div>
     </div>
     <div>
-
+        
         {% block content %}
         {% endblock %}
 
