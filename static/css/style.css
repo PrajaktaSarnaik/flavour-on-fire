@@ -176,6 +176,106 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+/*************** Form ***********/
+/* Card Styling for Form */
+.custom-card {
+    /* background: linear-gradient(135deg, #ffebcd, #f3d7d7); */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem; /* Reduced padding */
+    width: 100%;
+    max-width: 600px; /* Smaller width */
+    margin: 0 auto;
+}
+
+.custom-card h3 {
+    color: #E84610; /* Sign-in heading color */
+    font-size: 2.3rem; /* Smaller heading */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Form Input Fields */
+input, textarea, select {
+    border-radius: 8px;
+    padding: 10px; /* Smaller padding */
+    width: 100%;
+    margin-bottom: 0.8rem; /* Reduced margin */
+    border: 2px solid #bad7de;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 0.9rem; /* Smaller font */
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ffb703; /* Focused border color */
+    box-shadow: 0 0 8px rgba(255, 183, 3, 0.6);
+}
+
+/* Submit Button */
+.btn-signin,
+.btn-signup,
+.btn-signout {
+    background-color: #ffb703; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 5px; /* Reduced padding */
+    font-size: 0.9rem; /* Smaller font size */
+    font-weight: bold;
+    border-radius: 8px;
+    width: 15%;
+    transition: background-color 0.3s ease;
+    display: block; /* Make the button a block element */
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+.btn-signin:hover,
+.btn-signup:hover,
+.btn-signout:hover {
+    background-color: #111111; /* Darker hover effect */
+    color: #fff;
+  
+}
+/* Adding a subtle shadow to the button on hover */
+.btn-signin:focus,
+.btn-signup:focus,
+.btn-signout:focus{
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 183, 3, 0.7);
+}
+
+/* Additional spacing and layout adjustments for the form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Link Styling */
+a.link {
+    color: #ffb703;
+    text-decoration: none;
+    font-size: 1.3rem; 
+    font-weight: bold;
+}
+
+a.link:hover {
+    color: #ffb703;
+}
+/* Error and success messages */
+.alert-info {
+    --bs-alert-bg: #0c4956;
+    color: #d6f7ec;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.alert-link {
+    color: #eef0f3;
+    text-decoration: underline;
+}
+
 /************ Cards ************/
 /* Card shadow effect */
 .recipe-entry:nth-child(3n+1), 
@@ -190,12 +290,6 @@ body {
 }
 
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .card-img-top {
-        height: 150px;
-    }
-}
 
 /*********Recipe Description***********/
 
@@ -212,4 +306,17 @@ body {
 /*********** Media Queries ************/
 
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 150px;
+    }
+    .custom-card {
+        padding: 1rem;
+        width: 90%; /* Adjust form width on smaller screens */
+    }
+    .btn-signin {
+        padding: 8px 12px; /* Smaller button padding for smaller screens */
+    }
+}
 
