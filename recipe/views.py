@@ -3,9 +3,6 @@ from django.views import generic
 from .models import Recipe
 
 
-# def home(request):
-#     return render(request, 'recipe/index.html')
-
 class RecipeList(generic.ListView):
     """
     Returns all published recipes in :model:`recipe.Recipe`
@@ -26,6 +23,15 @@ class RecipeList(generic.ListView):
     template_name = "recipe/index.html"
     paginate_by = 6
 
+    def get_queryset(self):
+        recipes = Recipe.objects.filter(status=1)
+        print("All Recipes:", recipes)  # Debug print
+
+        filtered_recipes = recipes.exclude(author__username='Admin')
+        print("Filtered Recipes (excluding admin):", filtered_recipes)  # Debug print
+
+        return filtered_recipes
+    
 
 def recipe_detail(request, slug):
     """
