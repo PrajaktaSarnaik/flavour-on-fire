@@ -1,6 +1,18 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.views import generic
 from .models import Recipe
+
+
+def chef_special(request):
+    # Check if the user is authenticated
+    if request.user.is_authenticated:
+        # Display recipes only by 'Admin'
+        recipes = Recipe.objects.filter(author__username='Admin', status=1)
+        return render(request, 'recipe/chef_special.html', {'recipe_list': recipes})
+    else:
+        # Redirect to the login page with a 'next' parameter
+        return redirect('account_login')  
 
 
 class RecipeList(generic.ListView):
