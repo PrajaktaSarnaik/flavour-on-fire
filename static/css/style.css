@@ -268,13 +268,16 @@ a.link:hover {
     color: #d6f7ec;
     border: none;
     padding: 10px;
-    border-radius: 8px;
 }
 
 .alert-link {
     color: #eef0f3;
     text-decoration: underline;
 }
+
+ul.errorlist li {
+    background-color: lightblue; /* You can change 'red' to any color you prefer */
+  }
 
 /************ Cards ************/
 /* Card shadow effect */
@@ -302,7 +305,11 @@ a.link:hover {
     width: 100%; /* Ensure the image takes the full width of the parent element */
 }
 
-
+/******* Django messages *********/
+p.approval {
+    background-color: lightblue;
+    width: 50%;
+  }
 /*********** Media Queries ************/
 
 
