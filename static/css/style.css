@@ -350,7 +350,7 @@ p.approval {
     color: #eef0f3;
     /* Light text for contrast */
     font-size: 0.9rem;
-    padding: 10px 0;
+
     /* Reduce vertical padding */
     margin-top: 25px;
     /* Adds space between the footer and the content above */
@@ -372,7 +372,7 @@ p.approval {
 .footer h5 {
     color: #ffb703;
     font-weight: 600;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 .footer ul {
@@ -381,7 +381,7 @@ p.approval {
 }
 
 .footer ul li {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.1rem;
 }
 
 .footer ul li a {

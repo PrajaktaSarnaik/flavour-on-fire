@@ -1,5 +1,3 @@
-console.log("comments.js loaded");
-
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
@@ -19,15 +17,17 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 * - Updates the submit button's text to "Update".
 * - Sets the form's action attribute to the `edit_comment/{commentId}` endpoint.
 */
+console.log("Inside edit comment JS");
 for (let button of editButtons) {
-  button.addEventListener("click", (e) => {
-    let commentId = e.target.getAttribute("comment_id");
-    let commentContent = document.getElementById(`comment${commentId}`).innerText;
-    commentText.value = commentContent;
-    submitButton.innerText = "Update";
-    commentForm.setAttribute("action", `edit_comment/${commentId}`);
-  });
-}
+    button.addEventListener("click", (e) => {
+      let commentId = e.target.getAttribute("comment_id");
+      let commentContent = document.getElementById(`comment${commentId}`).innerText;
+      console.log("Original Comment: "+ commentContent);
+      commentText.value = commentContent;
+      submitButton.innerText = "Update";
+      commentForm.setAttribute("action", `edit_comment/${commentId}`);
+    });
+  }
 
 /**
 * Initializes deletion functionality for the provided delete buttons.
