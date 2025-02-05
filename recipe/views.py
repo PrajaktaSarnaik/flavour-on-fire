@@ -1,7 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.views import generic
-from .models import Recipe
+from django.contrib import messages
+from django.http import HttpResponseRedirect
+from .models import Recipe, Comment
+from .forms import CommentForm
 
 
 def chef_special(request):
@@ -18,13 +21,13 @@ def chef_special(request):
 class RecipeList(generic.ListView):
     """
     Returns all published recipes in :model:`recipe.Recipe`
-    and displays them in a page of six posts.
+    and displays them in a page of six recipes.
     **Context**
 
     ``queryset``
         All published instances of :model:`recipe.Recipe`
     ``paginate_by``
-        Number of posts per page.
+        Number of recipes per page.
 
     **Template:**
 
@@ -51,20 +54,41 @@ def recipe_detail(request, slug):
 
     **Context**
 
-    ``post``
+    ``recipe``
         An instance of :model:`recipe.Recipe`.
 
     **Template:**
 
     :template:`recipe/recipe_detail.html`
     """
-
     queryset = Recipe.objects.filter(status=1)
     recipe = get_object_or_404(queryset, slug=slug)
+    comments = recipe.comments.all().order_by("-created_on")
+    comment_count = recipe.comments.filter(approved=True).count()
+
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.author = request.user
+            comment.recipe = recipe
+            comment.save()
+            messages.add_message(
+                request, messages.SUCCESS,
+                'Comment submitted and awaiting approval'
+            )
+
+
+    comment_form = CommentForm()
 
     return render(
         request,
         "recipe/recipe_detail.html",
-        {"recipe": recipe},
+        {
+            "recipe": recipe,
+            "comments": comments,
+            "comment_count": comment_count,
+            "comment_form": comment_form,
+        }
     )
 
