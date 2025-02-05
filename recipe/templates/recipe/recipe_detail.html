@@ -80,7 +80,7 @@
                                 </p>
                                 <div class="rating">
                                     {% for i in "12345" %}
-                                    {% if i|add:"0" <= comment.rating %} <i class="bi bi-star-fill"></i>
+                                    {% if i|add:"0" <= comment.rating %} <i class="bi bi-star-fill text-warning"></i>
                                         {% else %}
                                         <i class="bi bi-star"></i>
                                         {% endif %}
