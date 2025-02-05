@@ -27,7 +27,8 @@
                                 <!-- Recipe title goes in these h1 tags -->
                                 <h1 class="recipe-title">{{ recipe.recipe_title }}</h1>
                                 <p><strong class="text-secondary">
-                                       <a href="#reviews" class="text-decoration-none text-warning"> <i class="bi bi-chat" ></i> {{ comment_count }}</a>
+                                        <a href="#reviews" class="text-decoration-none text-warning"> <i
+                                                class="bi bi-chat"></i> {{ comment_count }}</a>
                                     </strong></p>
                                 <hr>
                                 <!-- Introduction Section -->
@@ -89,20 +90,23 @@
                                             {{ comment.body | linebreaks }}
                                         </p>
                                         {% if not comment.approved and comment.author == user %}
-                                <p class="approval">
-                                    This comment is awaiting approval
-                                </p>
-                                {% endif %}
-                                        <hr>
-                                        
-                                </div>
+                                        <p class="approval">
+                                            This comment is awaiting approval
+                                        </p>
+                                        {% endif %}
+                                        {% if user.is_authenticated and comment.author == user %}
+                                        <div class="row gap-3">
+                                            <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
 
-                                
+                                            <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                                        </div>
+                                        {% endif %}
+                                        <hr>
+                                </div>
                             </div>
                             <!-- Our for loop ends here -->
                             {% endfor %}
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -110,6 +114,27 @@
     </div>
 </div>
 
+
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content card">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete comment?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete your comment?
+                This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="deleteConfirm" href="#" class="btn
+          btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Creating New Comments -->
 <div class="container">
@@ -138,7 +163,7 @@
             </div>
         </div>
     </div>
-</div>    
+</div>
 
 <div class="container mt-5">
     <div class="row">
@@ -149,22 +174,24 @@
                     <h3>Reviews:</h3>
                     <hr>
                     {% for comment in comments %}
-                    <div class="p-2 comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
-                        <p class="font-weight-bold"><b>{{ comment.author }}</b> reviewed on <span class="font-weight-normal"><i>{{ comment.created_on }}</i></span></p>
+                    <div
+                        class="p-2 comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
+                        <p class="font-weight-bold"><b>{{ comment.author }}</b> reviewed on <span
+                                class="font-weight-normal"><i>{{ comment.created_on }}</i></span></p>
                         <div class="rating">
                             {% for i in "12345" %}
-                            {% if i|add:"0" <= comment.rating %}
-                            <i class="bi bi-star-fill"></i>
-                            {% else %}
-                            <i class="bi bi-star"></i>
-                            {% endif %}
-                            {% endfor %}
+                            {% if i|add:"0" <= comment.rating %} <i class="bi bi-star-fill"></i>
+                                {% else %}
+                                <i class="bi bi-star"></i>
+                                {% endif %}
+                                {% endfor %}
                         </div>
                         <p id="comment{{ comment.id }}">{{ comment.body | linebreaks }}</p>
                         <hr>
                         {% if not comment.approved and comment.author == user %}
                         <p class="approval">This comment is awaiting approval</p>
                         {% endif %}
+
                     </div>
                     {% endfor %}
                 </div>
@@ -199,4 +226,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+<script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}

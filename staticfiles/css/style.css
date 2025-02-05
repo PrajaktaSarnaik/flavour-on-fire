@@ -102,9 +102,7 @@ body {
 }
 
 /*** Hero Section ***/
-
-
-/* ******************** */
+/* Ensure the video and content are responsive */
 .carousel-item{
     height: 60vh;
 }
@@ -119,6 +117,7 @@ body {
     justify-content: center; /* Center the indicators */
     gap: 8px; /* Space between indicators */
 }
+
 
 .carousel-indicators button {
     width: 12px;
@@ -136,51 +135,20 @@ body {
     opacity: 1;
 }
 
-/*** Media Queries ***/
-/* For extra small devices */
+.carousel-item .col-md-6 {
+    padding: 0;
+}
+
+.carousel-item video {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item .p-4 {
+    padding: 2rem;
+}
 
 
-/* For small devices */
-
-/* @media (max-width: 767px) {
-    
-    .carousel-indicators {
-        bottom: 115px; 
-        
-    }
-
-    .carousel-indicators button {
-        width: 12px;
-        height: 12px;
-        background-color: white; 
-        border: 1px solid black;
-        opacity: 0.5;
-    }
-
-    .carousel-indicators button.active,
-    .carousel-indicators button:hover {
-        opacity: 1;
-    }
-
-    
-    .carousel-caption {
-        background: rgba(0, 0, 0, 0.5); 
-        padding: 10px;
-        border-radius: 5px;
-        bottom: 130px;
-        font-size: 14px;
-    }
-
-    .carousel-caption h3 {
-        font-size: 20px; 
-        
-    }
-
-    .carousel-caption p {
-        font-size: 16px; 
-        
-    }
-} */
 /******* Recipe Posts *******/
 .recipe-link {
     text-decoration: none;
@@ -208,100 +176,202 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+/*************** Form ***********/
+/* Card Styling for Form */
+.custom-card {
+    /* background: linear-gradient(135deg, #ffebcd, #f3d7d7); */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem; /* Reduced padding */
+    width: 100%;
+    max-width: 600px; /* Smaller width */
+    margin: 0 auto;
+}
+
+.custom-card h3 {
+    color: #E84610; /* Sign-in heading color */
+    font-size: 2.3rem; /* Smaller heading */
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Form Input Fields */
+input, textarea, select {
+    border-radius: 8px;
+    padding: 10px; /* Smaller padding */
+    width: 100%;
+    margin-bottom: 0.8rem; /* Reduced margin */
+    border: 2px solid #bad7de;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 0.9rem; /* Smaller font */
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ffb703; /* Focused border color */
+    box-shadow: 0 0 8px rgba(255, 183, 3, 0.6);
+}
+
+/* Submit Button */
+.btn-signin,
+.btn-signup,
+.btn-signout {
+    background-color: #ffb703; /* Button color */
+    color: white;
+    border: none;
+    padding: 10px 5px; /* Reduced padding */
+    font-size: 0.9rem; /* Smaller font size */
+    font-weight: bold;
+    border-radius: 8px;
+    width: 15%;
+    transition: background-color 0.3s ease;
+    display: block; /* Make the button a block element */
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+.btn-signin:hover,
+.btn-signup:hover,
+.btn-signout:hover {
+    background-color: #111111; /* Darker hover effect */
+    color: #fff;
+  
+}
+/* Adding a subtle shadow to the button on hover */
+.btn-signin:focus,
+.btn-signup:focus,
+.btn-signout:focus{
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 183, 3, 0.7);
+}
+
+/* Additional spacing and layout adjustments for the form */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Link Styling */
+a.link {
+    color: #ffb703;
+    text-decoration: none;
+    font-size: 1.3rem; 
+    font-weight: bold;
+}
+
+a.link:hover {
+    color: #ffb703;
+}
+/* Error and success messages */
+.alert-info {
+    --bs-alert-bg: #0c4956;
+    color: #d6f7ec;
+    border: none;
+    padding: 10px;
+}
+
+.alert-link {
+    color: #eef0f3;
+    text-decoration: underline;
+}
+
+ul.errorlist li {
+    background-color: lightblue; 
+  }
+
+/************ Cards ************/
+/* Card shadow effect */
+.recipe-entry:nth-child(3n+1), 
+.card{
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.15), 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-entry:nth-child(3n+1):hover,
+.card {
+    /* transform: translateY(-10px); */
+    box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.25), 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/*********Recipe Description***********/
+
+.masthead-image {
+    display: flex;
+    align-items: stretch;
+}
+
+.masthead-image img {
+    object-fit: cover; /* Ensure the image covers the area without stretching */
+    height: 100%; /* Match the height of the parent element */
+    width: 100%; /* Ensure the image takes the full width of the parent element */
+}
+
+
+/******* Django messages *********/
+p.approval {
+    background-color: lightblue;
+    width: 50%;
+  }
+
+/***** Footer *****/
+
+.footer {
+    background-color: #0c4956;
+    color: #eef0f3;
+    /* Light text for contrast */
+    font-size: 0.9rem;
+    padding: 10px 0;
+    /* Reduce vertical padding */
+    margin-top: 25px;
+    /* Adds space between the footer and the content above */
+
+}
+
+.bg-dark{
+    background-color: #0c4956 !important;
+}
+
+
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #ffffff;
+    /* Add a soft green hover effect */
+}
+
+.footer h5 {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 0.3rem;
+}
+
+.footer ul li a {
+    font-size: 0.9rem;
+}
+
+.bi {
+    font-size: 1.2rem;
+}
+
 /*********** Media Queries ************/
-
-@media (max-width: 767px) {
-    /* Ensure carousel indicators are positioned properly */
-    .carousel-indicators {
-        bottom: 15px; /* Adjust the position */
-        display: flex !important; /* Force visibility */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 150px;
     }
-
-    .carousel-indicators button {
-        width: 10px;
-        height: 10px;
-        background-color: white !important; /* Make indicators visible */
-        border: 1px solid black;
-        opacity: 1 !important; /* Ensure full visibility */
+    .custom-card {
+        padding: 1rem;
+        width: 90%; /* Adjust form width on smaller screens */
     }
-
-    .carousel-indicators button.active,
-    .carousel-indicators button:hover {
-        background-color: black !important;
-    }
-}
-@media (max-width: 767px) {
-    /* Make sure captions are always visible */
-    .carousel-caption {
-        display: block !important; /* Force visibility */
-        bottom: 20px; /* Adjust position */
-        background: rgba(0, 0, 0, 0.6); /* Dark overlay for better contrast */
-        padding: 10px;
-        border-radius: 5px;
-        width: 90%; /* Keep it within the screen */
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-    }
-
-    /* Adjust text sizes for small screens */
-    .carousel-caption h3 {
-        color:#000;
-        font-size: 16px !important; /* Smaller font for readability */
-    }
-
-    .carousel-caption p {
-        color:#000;
-        font-size: 12px !important;
-    }
-}
-
-
-
-    /* For small devices */
-
-@media (max-width: 1024px) {
-    /* Ensure carousel indicators are positioned properly */
-    .carousel-indicators {
-        bottom: 115px; /* Adjust the position */
-        display: flex !important; /* Force visibility */
-    }
-
-    .carousel-indicators button {
-        width: 10px;
-        height: 10px;
-        background-color: white !important; /* Make indicators visible */
-        border: 1px solid black;
-        opacity: 0.5 !important; /* Ensure full visibility */
-    }
-
-    .carousel-indicators button.active,
-    .carousel-indicators button:hover {
-        /* background-color: black !important; */
-        opacity: 1;
-    }
-
-
-    /* Make sure captions are always visible */
-    .carousel-caption {
-        display: block !important; /* Force visibility */
-        bottom: 135px; /* Adjust position */
-        background: rgba(0, 0, 0, 0); /* Dark overlay for better contrast */
-        padding: 10px;
-        border-radius: 5px;
-        width: 90%; /* Keep it within the screen */
-        left: 50%;
-        transform: translateX(-50%);
-        text-align: center;
-    }
-
-    /* Adjust text sizes for small screens */
-    .carousel-caption h3 {
-        font-size: 20px !important; /* Smaller font for readability */
-    }
-
-    .carousel-caption p {
-        font-size: 14px !important;
+    .btn-signin {
+        padding: 8px 12px; /* Smaller button padding for smaller screens */
     }
 }
 
