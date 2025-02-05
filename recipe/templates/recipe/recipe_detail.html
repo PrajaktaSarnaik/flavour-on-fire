@@ -88,14 +88,16 @@
                                         <p id="comment{{ comment.id }}">
                                             {{ comment.body | linebreaks }}
                                         </p>
-                                        <hr>
-                                </div>
-
-                                {% if not comment.approved and comment.author == user %}
+                                        {% if not comment.approved and comment.author == user %}
                                 <p class="approval">
                                     This comment is awaiting approval
                                 </p>
                                 {% endif %}
+                                        <hr>
+                                        
+                                </div>
+
+                                
                             </div>
                             <!-- Our for loop ends here -->
                             {% endfor %}
