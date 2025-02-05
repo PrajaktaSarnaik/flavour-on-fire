@@ -4,8 +4,8 @@ body {
     scroll-behavior: smooth;
 }
 
-h5,h3{
-    color: #E84610;
+h5,h3,h2 {
+    color: #fb5607;
 }
 
 .alert-info{
@@ -116,6 +116,10 @@ h5,h3{
     background: linear-gradient(135deg, #ffebcd, #f3d7d7);
 }
 
+.carousel-content h3{
+    color: #000;
+}
+
 .carousel-indicators {
     margin-top: 10px; /* Spacing below <h3> */
     justify-content: center; /* Center the indicators */
@@ -154,6 +158,10 @@ h5,h3{
 
 
 /******* Recipe Posts *******/
+.recipe-title{
+    color: #fb8500; /* */
+}
+
 .recipe-link {
     text-decoration: none;
     color: #E84610;
@@ -164,7 +172,6 @@ h5,h3{
     color: #ffb703;
 }
 
-/* Recipe Entries Column */
 /* Recipe Entries Column */
 .recipe-entry .card-img-top {
     width: 100%; /* Set the width to 100% of the parent element */
@@ -180,6 +187,8 @@ h5,h3{
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+
 /*************** Form ***********/
 /* Card Styling for Form */
 .custom-card {
@@ -193,10 +202,14 @@ h5,h3{
 }
 
 .custom-card h3 {
-    color: #E84610; /* Sign-in heading color */
+    color: #fb5607; /* Sign-in heading color */
     font-size: 1.8rem; /* Smaller heading */
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+.card-title h1{
+    color: #fb5607; /* Sign-in heading color */
 }
 
 /* Form Input Fields */
