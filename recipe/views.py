@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Recipe, Comment
 from .forms import CommentForm
+from .forms import RecipeForm
 
 
 def chef_special(request):
@@ -101,6 +102,7 @@ def comment_edit(request, slug, comment_id):
         queryset = Recipe.objects.filter(status=1)
         recipe = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
+        print("Comment:", comment)  # Debug print
         comment_form = CommentForm(data=request.POST, instance=comment)
 
         if comment_form.is_valid() and comment.author == request.user:
@@ -130,3 +132,22 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
+
+
+
+@login_required
+def share_recipe(request):
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            recipe = form.save(commit=False)
+            recipe.author = request.user
+            recipe.status = 0  # Set status to 'Draft' for admin approval
+            recipe.save()
+            messages.add_message(request, messages.SUCCESS, 'Recipe submitted for approval!')
+            return redirect('home')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error submitting recipe!')
+    else:
+        form = RecipeForm()
+    return render(request, 'recipe/share_recipe.html', {'form': form})
