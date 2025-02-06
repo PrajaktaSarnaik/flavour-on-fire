@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container">
     
     <!-- Display messages -->
     {% if messages %}
@@ -24,8 +24,11 @@
         {% endfor %}
     </div>
     {% endif %}
-    <h2>Share Your Recipe</h2>
-    
+    <div class="container-fluid text-center mt-4">
+        <h1>Share Your Recipes</h1>
+        <p class="lead">Your Kitchen Creations Deserve the <strong>Spotlight</strong> – Share Now!</p>
+        
+    </div>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
