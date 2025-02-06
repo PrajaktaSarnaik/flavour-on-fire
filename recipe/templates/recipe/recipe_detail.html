@@ -88,9 +88,9 @@
                                         <i class="bi bi-star"></i>
                                         {% endif %}
                                         {% endfor %}
-                                        <p id="comment{{ comment.id }}">
+                                        <div id="comment{{ comment.id }}">
                                             {{ comment.body | linebreaks }}
-                                        </p>
+                                        </div>
                                         {% if not comment.approved and comment.author == user %}
                                         <p class="approval">
                                             This comment is awaiting approval
@@ -101,7 +101,7 @@
                                             <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
 
                                             <button class="btn btn-edit"
-                                            comment_id="{{ comment.id }}">Edit</button>
+                                            data-comment_id="{{ comment.id }}">Edit</button>
                                         </div>
                                         {% endif %}
                                         <hr>
