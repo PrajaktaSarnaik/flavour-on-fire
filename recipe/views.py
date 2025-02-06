@@ -144,8 +144,9 @@ def share_recipe(request):
             recipe.author = request.user
             recipe.status = 0  # Set status to 'Draft' for admin approval
             recipe.save()
-            messages.add_message(request, messages.SUCCESS, 'Recipe submitted for approval!')
-            return redirect('home')
+            messages.add_message(request, messages.SUCCESS, "Thanks for sharing your recipe! It's on its way for approval and will be live in the Recipe section once it's approved. Stay tuned!")
+            form = RecipeForm()
+            # return redirect('home')
         else:
             messages.add_message(request, messages.ERROR, 'Error submitting recipe!')
     else:
