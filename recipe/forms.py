@@ -10,11 +10,11 @@ class CommentForm(forms.ModelForm):
             'rating': forms.RadioSelect(choices=RATING_STARS),
         }
 
+
 class RecipeForm(forms.ModelForm):
     class Meta:
         model = Recipe
         fields = ['recipe_title', 'featured_image', 'diet', 'introduction', 'ingredients', 'instructions']
         widgets = {
-            'ingredients': forms.Textarea(attrs={'rows': 4}),
-            'instructions': forms.Textarea(attrs={'rows': 4}),
+            'introduction': forms.Textarea(attrs={'rows': 4}),
         }

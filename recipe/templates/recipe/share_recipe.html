@@ -29,12 +29,27 @@
         <p class="lead">Your Kitchen Creations Deserve the <strong>Spotlight</strong> – Share Now!</p>
         
     </div>
+    <div class="container">
+        <div class="row g-0 align-items-stretch">
+            <div class="col-md-12 d-flex flex-column">
+                <div class="card mb-4 mt-3 left top flex-fill glow-card">
+                    <div class="row g-0">
+                        <div class="col-md-12 col-lg-12 d-flex align-items-start justify-content-center">
+                            <div class="card-body p-4">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Submit Recipe</button>
+        <button type="submit" class="btn btn-primary btn-signup">Submit Recipe</button>
     </form>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 {% endblock %}
 
 {% block script %}
