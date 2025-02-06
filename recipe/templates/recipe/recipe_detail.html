@@ -44,7 +44,9 @@
                                         <a href="#reviews" class="text-decoration-none link-success"> <i
                                                 class="bi bi-chat-fill"></i> {{ comment_count }}</a>
                                                 <button  id="printButton" class="btn btn-primary btn-sm ms-3 bg-warning text-dark"><i class="bi bi-printer-fill"></i></button>
-                                                <button   class="btn btn-primary ms-3 bg-warning text-dark">Review</button>
+                                                
+                                                <button type="button"  class="btn btn-primary ms-3 bg-warning text-dark"  data-bs-toggle="modal" data-bs-target="#reviewModal">Review</button>
+                                                
                                     </strong></p>
                                 <hr>
                                 <!-- Introduction Section -->
@@ -115,10 +117,18 @@
                                             <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
 
                                             <button class="btn btn-edit"
-                                            data-comment_id="{{ comment.id }}">Edit</button>
+                                            data-comment_id="{{ comment.id }}" data-bs-toggle="modal" data-bs-target="#reviewModal">Edit</button>
                                         </div>
                                         {% endif %}
-                                        <hr>
+                                        <!-- {% if user.is_authenticated and comment.author == user %}
+                                        <div class="row gap-3">
+                                            <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+                                            <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
+                                            <button class="btn btn-save d-none" comment_id="{{ comment.id }}">Save</button>
+                                            <button class="btn btn-cancel d-none" comment_id="{{ comment.id }}">Cancel</button>
+                                        </div>
+                                        {% endif %}
+                                        <hr> -->
                                 </div>
                             </div>
                             <!-- Our for loop ends here -->
@@ -126,6 +136,32 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Review Modal -->
+
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content card">
+            <div class="modal-header">
+                {% if user.is_authenticated %}
+                <h3 class="modal-title" id="reviewModalLabel">Leave a Review</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                <form id="commentForm" method="post">
+                    {% csrf_token %}
+                    {{ comment_form|crispy }}
+                    <button id="submitButton" type="submit" class="btn btn-primary btn-signup">Submit</button>
+                </form>
+                {% else %}
+                            <p class="text-center"><strong>Log in to leave a review</strong></h5>
+                            {% endif %}
             </div>
         </div>
     </div>
@@ -154,7 +190,7 @@
 </div>
 
 <!-- Creating New Comments -->
-<div class="container">
+<!-- <div class="container">
     <div class="row g-0 align-items-stretch">
         <div class="col-md-12 d-flex flex-column">
             <div class="card mb-4 mt-3 left top flex-fill glow-card">
@@ -178,7 +214,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <!-- Different view format -->
