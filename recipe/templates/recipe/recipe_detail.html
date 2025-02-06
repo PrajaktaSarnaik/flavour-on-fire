@@ -33,13 +33,18 @@
                     <div class="row g-0">
                         <!-- Text Column -->
                         <div class="col-md-6 d-flex align-items-start justify-content-center">
-                            <div class="card-body p-4">
+                            <div class="card-body p-4" id="recipeCard">
 
                                 <!-- Recipe title goes in these h1 tags -->
-                                <h1 class="recipe-title">{{ recipe.recipe_title }}</h1>
+                                <h1 class="recipe-title">{{ recipe.recipe_title }}
+                                    
+                                </h1>
+                                
                                 <p><strong class="text-secondary">
                                         <a href="#reviews" class="text-decoration-none link-success"> <i
                                                 class="bi bi-chat-fill"></i> {{ comment_count }}</a>
+                                                <button  id="printButton" class="btn btn-primary btn-sm ms-3 bg-warning text-dark"><i class="bi bi-printer-fill"></i></button>
+                                                <button   class="btn btn-primary ms-3 bg-warning text-dark">Review</button>
                                     </strong></p>
                                 <hr>
                                 <!-- Introduction Section -->
@@ -239,4 +244,5 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 <script src="{% static 'js/comments.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
 {% endblock %}
