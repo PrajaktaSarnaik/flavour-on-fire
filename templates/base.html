@@ -3,6 +3,7 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'author' as author_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +41,7 @@
                 <img src="{% static 'images\logo8.PNG' %}" alt="Logo" class="logo">
             </a>
             <div class="navbar-nav ml-auto nav-right">
-                <a class="nav-item nav-link fs-4 px-5" href="#"><strong>Authors</strong></a>
+                <a class="nav-item nav-link fs-4 px-5" href="{% url 'author' %}"><strong>Authors</strong></a>
                 <a class="nav-item nav-link fs-4 px-5" href="{% url 'share_recipe' %}"><strong>Share your recipes</strong></a>
             </div>
         </div>
