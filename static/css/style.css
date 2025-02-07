@@ -107,9 +107,7 @@ h5,h3,h2 {
 
 /*** Hero Section ***/
 /* Ensure the video and content are responsive */
-.carousel-item{
-    height: 60vh;
-}
+
 
 .carousel-content{
     /* background-color: #ffebcd; */
@@ -404,6 +402,14 @@ p.approval {
     /* Optional: Add a border to the image */
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.15), 0 6px 18px rgba(0, 0, 0, 0.5);
 }
+.author-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.author-summary {
+    cursor: pointer;
+}
 
 .author-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -425,6 +431,8 @@ p.approval {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+
 /*********** Media Queries ************/
 /* Responsive adjustments */
 @media (max-width: 768px) {
