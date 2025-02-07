@@ -24,18 +24,48 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-12 col-md-4 text-center">
-            {% if "placeholder" in author.profile_image.url %}
-            <img src="{% static 'images/nobody.jpg' %}" class="profile-image" alt="{{ author.title }}">
-            {% else %}
-            <img src="{{ author.profile_image.url }}" class="profile-image" alt="{{ author.title }}">
-            {% endif %}
+        {% for author in authors %}
+        <div class="col-12 mb-3 card">
+
+            <!-- Accordion Item -->
+            <div class="accordion-item">
+                <!-- Author Summary: Image (Left) + Name & Details (Right) -->
+                <div class="d-flex align-items-center p-3 bg-white" style="cursor: pointer;" data-bs-toggle="collapse" data-bs-target="#authorInfo{{ forloop.counter }}">
+
+                    <!-- Author Image (Left Side) -->
+                    <div class="me-3">
+                        {% if "placeholder" in author.profile_image.url %}
+                        <img src="{% static 'images/nobody.jpg' %}" class="profile-image rounded-circle" alt="{{ author.title }}" style="width: 150px; height: 150px;">
+                        {% else %}
+                        <img src="{{ author.profile_image.url }}" class="profile-image rounded-circle" alt="{{ author.title }}" style="width: 150px; height: 150px;">
+                        {% endif %}
+                    </div>
+
+                    <!-- Author Name & Brief Details (Right Side) -->
+                    <div class="text-start">
+                        <h3 class="mb-2">{{ author.title }}</h3>
+                        <hr>
+                        <p class="text-muted mb-0 author-intro">
+                            {{ author.content | striptags }} <!-- Display first 25 words -->
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Collapsible Full Author Information (Expands Below) -->
+                <div id="authorInfo{{ forloop.counter }}" class="accordion-collapse collapse">
+                    <div class="accordion-body p-4">
+                        <h5>Introduction :</h5>
+                        <hr>
+                        <div>{{ author.content | safe }}</div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Accordion Item -->
+
         </div>
-        <div class="col-12 col-md-8">
-            <h2>{{ author.title }}</h2>
-            {{ author.content | safe }}
-        </div>
+        {% endfor %}
     </div>
+</div>
 
 {% endblock content %}
 
