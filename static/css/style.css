@@ -243,7 +243,7 @@ input:focus, textarea:focus {
     font-size: 0.9rem; /* Smaller font size */
     font-weight: bold;
     border-radius: 8px;
-    width: 15%;
+    width: 20%;
     transition: background-color 0.3s ease;
     display: block; /* Make the button a block element */
     

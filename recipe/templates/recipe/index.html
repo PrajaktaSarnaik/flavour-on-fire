@@ -156,7 +156,7 @@
                                 <img class="card-img-top" src=" {{ recipe.featured_image.url }}" alt="{{ recipe.recipe_title }}">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ recipe.author }}</p>
+                                    <p class="author">Recipe By: <strong>{{ recipe.author }}</strong></p>
                                 </div>
                             </div>
                             <a href="{% url 'recipe_detail' recipe.slug %}" class="recipe-link">
