@@ -8,7 +8,6 @@ class CommentForm(forms.ModelForm):
         fields = ['body', 'rating']
         widgets = {
             'body': forms.Textarea(attrs={'rows': 4}),
-            'rating': forms.RadioSelect(choices=RATING_STARS),
         }
 
 

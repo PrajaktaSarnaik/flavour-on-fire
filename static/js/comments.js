@@ -7,6 +7,9 @@ const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 
+const stars = document.querySelectorAll('.star-rating i');
+const ratingInput = document.getElementById('id_rating');
+
 /**
 * Initializes edit functionality for the provided edit buttons.
 * 
@@ -17,11 +20,34 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 * - Updates the submit button's text to "Update".
 * - Sets the form's action attribute to the `edit_comment/{commentId}` endpoint.
 */
+document.addEventListener('DOMContentLoaded', function () {
+
+
+stars.forEach(star => {
+    star.addEventListener('click', function () {
+        const ratingValue = this.getAttribute('data-value');
+        ratingInput.value = ratingValue;
+        console.log("Star value -" + ratingValue);
+        // Highlight stars up to the selected one
+        stars.forEach(s => {
+            if (s.getAttribute('data-value') <= ratingValue) {
+                s.classList.remove('bi-star');
+                s.classList.add('bi-star-fill', 'text-warning');
+            } else {
+                s.classList.remove('bi-star-fill', 'text-warning');
+                s.classList.add('bi-star');
+            }
+        });
+    });
+});
+});
+console.log("Updated rating value:" + stars);
 console.log("Inside edit comment JS");
 for (let button of editButtons) {
     button.addEventListener("click", (e) => {
       let commentId = e.target.getAttribute("data-comment_id");
       let commentContent = document.getElementById(`comment${commentId}`).innerText;
+      
       console.log("Original Comment: "+ commentContent);
       commentText.value = commentContent;
       submitButton.innerText = "Update";

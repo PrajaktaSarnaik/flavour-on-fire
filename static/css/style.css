@@ -433,6 +433,16 @@ p.approval {
     text-overflow: ellipsis;
 }
 
+/************** Rating Star ****************** */
 
-/*********** Media Queries ************/
+.star-rating i {
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.star-rating i:hover {
+    color: gold;
+}
+
 

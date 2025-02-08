@@ -156,7 +156,17 @@
                 
                 <form id="commentForm" method="post">
                     {% csrf_token %}
-                    {{ comment_form|crispy }}
+                    {{ comment_form.body|as_crispy_field }}
+                    <p>Rating:</p>
+                    <!-- Star rating inside the form -->
+                    <div class="star-rating" id="starRating">
+                        {% for i in "12345" %}
+                            <i class="bi bi-star" data-value="{{ forloop.counter }}"></i>
+                        {% endfor %}
+                    </div>
+                     <!-- Hidden rating input inside the form -->
+    <input type="hidden" id="id_rating" name="rating" value="1">
+
                     <button id="submitButton" type="submit" class="btn btn-primary btn-signup">Submit</button>
                 </form>
                 {% else %}
@@ -189,88 +199,6 @@
     </div>
 </div>
 
-<!-- Creating New Comments -->
-<!-- <div class="container">
-    <div class="row g-0 align-items-stretch">
-        <div class="col-md-12 d-flex flex-column">
-            <div class="card mb-4 mt-3 left top flex-fill glow-card">
-                <div class="row g-0">
-                    <div class="col-md-6 col-lg-6 d-flex align-items-start justify-content-center">
-                        <div class="card-body p-4">
-                            {% if user.is_authenticated %}
-                            <h3>Leave a review:</h3>
-                            <p>Reviewing as: {{ user.username }}</p>
-                            <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                                {{ comment_form | crispy }}
-                                {% csrf_token %}
-                                <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                            </form>
-                            {% else %}
-                            <p>Log in to leave a review</p>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-<!-- Different view format -->
-<!-- <div class="container mt-5">
-    <div class="row">
-        
-        <div class="col-md-6">
-            <div class="card mb-4 mt-3 left top flex-fill glow-card">
-                <div class="card-body p-4">
-                    <h3>Reviews:</h3>
-                    <hr>
-                    {% for comment in comments %}
-                    <div
-                        class="p-2 comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
-                        <p class="font-weight-bold"><b>{{ comment.author }}</b> reviewed on <span
-                                class="font-weight-normal"><i>{{ comment.created_on }}</i></span></p>
-                        <div class="rating">
-                            {% for i in "12345" %}
-                            {% if i|add:"0" <= comment.rating %} <i class="bi bi-star-fill"></i>
-                                {% else %}
-                                <i class="bi bi-star"></i>
-                                {% endif %}
-                                {% endfor %}
-                        </div>
-                        <p id="comment{{ comment.id }}">{{ comment.body | linebreaks }}</p>
-                        <hr>
-                        {% if not comment.approved and comment.author == user %}
-                        <p class="approval">This comment is awaiting approval</p>
-                        {% endif %}
-
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-        
-        <div class="col-md-6">
-            <div class="card mb-4 mt-3 left top flex-fill glow-card">
-                <div class="card-body p-4">
-                    {% if user.is_authenticated %}
-                    <h3>Leave a review:</h3>
-                    <p>Reviewing as: {{ user.username }}</p>
-                    <form id="commentForm" method="post" style="margin-top: 1.3em;">
-                        {{ comment_form | crispy }}
-                        {% csrf_token %}
-                        <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
-                    </form>
-                    {% else %}
-                    <p>Log in to leave a review</p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
 {% endblock content %}
 
 {% block script %}
