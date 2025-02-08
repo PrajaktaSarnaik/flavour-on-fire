@@ -7,7 +7,7 @@ from .models import Recipe, Comment
 from .forms import CommentForm
 from .forms import RecipeForm
 
-
+@login_required
 def chef_special(request):
     # Check if the user is authenticated
     if request.user.is_authenticated:
