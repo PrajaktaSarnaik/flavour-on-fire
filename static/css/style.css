@@ -109,10 +109,22 @@ h5,h3,h2 {
 /*** Hero Section ***/
 /* Ensure the video and content are responsive */
 
+.carousel-item .row {
+    display: flex;
+    align-items: stretch; /* Ensure both columns match the height */
+   
+    max-height: 485px;  /* Adjust to desired height */
+    overflow: hidden;
+
+}
 
 .carousel-content{
     /* background-color: #ffebcd; */
     background: linear-gradient(135deg, #ffebcd, #f3d7d7);
+    display: flex;
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+    padding: 2rem;
 }
 
 .carousel-content h3{
@@ -148,7 +160,8 @@ h5,h3,h2 {
 
 .carousel-item video {
     width: 100%;
-    height: auto;
+    height: 100%; /* Make video fill its container */
+    object-fit: cover; /* Ensure the video covers the space without distortion */
 }
 
 .carousel-item .p-4 {
