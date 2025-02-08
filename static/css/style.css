@@ -70,6 +70,7 @@ h5,h3,h2 {
 /*** Logo ***/
 .logo-container {
     position: relative;
+    display: inline-block;
 }
 
 .logo {
@@ -434,17 +435,4 @@ p.approval {
 
 
 /*********** Media Queries ************/
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .card-img-top {
-        height: 150px;
-    }
-    .custom-card {
-        padding: 1rem;
-        width: 90%; /* Adjust form width on smaller screens */
-    }
-    .btn-signin {
-        padding: 8px 12px; /* Smaller button padding for smaller screens */
-    }
-}
 
