@@ -26,7 +26,7 @@
         <div class="col-12 mt-3">
             <div class="row">
                 {% for recipe in recipe_list %}
-                    {% if recipe.author.username == "Admin" %}
+                                   
                         <div class="col-md-4">
                             <div class="card mb-4 recipe-entry">
                                 <div class="card-body">
@@ -55,7 +55,7 @@
                         {% if forloop.counter|divisibleby:3 %}
                             </div><div class="row">
                         {% endif %}
-                    {% endif %}
+                    
                 {% empty %}
                     <div class="col-12">
                         <p class="text-center fs-4">No special recipes from Admin at the moment. Check back soon!</p>

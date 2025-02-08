@@ -4,15 +4,20 @@ from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Recipe, Comment
+from author.models import Author
 from .forms import CommentForm
 from .forms import RecipeForm
+from django.db.models import F
 
 @login_required
 def chef_special(request):
     # Check if the user is authenticated
     if request.user.is_authenticated:
-        # Display recipes only by 'Admin'
-        recipes = Recipe.objects.filter(author__username='Admin', status=1)
+         # Get all author titles
+        author_titles = Author.objects.values_list('title', flat=True)
+        
+        # Filter recipes where the author's username matches any title in the Author model
+        recipes = Recipe.objects.filter(author__username__in=author_titles, status=1)
         return render(request, 'recipe/chef_special.html', {'recipe_list': recipes})
     else:
         # Redirect to the login page with a 'next' parameter
@@ -42,8 +47,9 @@ class RecipeList(generic.ListView):
     def get_queryset(self):
         recipes = Recipe.objects.filter(status=1)
         print("All Recipes:", recipes)  # Debug print
-
-        filtered_recipes = recipes.exclude(author__username='Admin')
+        author_titles = Author.objects.values_list('title', flat=True)
+        
+        filtered_recipes = recipes.exclude(author__username__in=author_titles)
         print("Filtered Recipes (excluding admin):", filtered_recipes)  # Debug print
 
         return filtered_recipes
