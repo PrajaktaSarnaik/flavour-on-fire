@@ -23,7 +23,7 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <main>
+  
         <div class="alert alert-info text-center mb-0 fs-5" role="alert">
             {% if user.is_authenticated %}
             Welcome, {{ user.username }}!
@@ -54,7 +54,7 @@
             </nav>
 
         </div>
-        <div class="alert alert-info text-left mb-4 mt-5 px-0 fs-5" role="alert">
+        <div class="alert alert-info text-left mb-2 px-0 fs-5" role="alert">
             <div class="container-fluid text-start">
                 {% if not user.is_authenticated %}
                 Share your culinary creations!&nbsp;&nbsp;
@@ -81,7 +81,7 @@
         </div>
 
         <!-- Footer -->
-        <footer class="footer mt-5 pt-2 text-center bg-dark">
+        <footer class="footer mt-auto pt-2 text-center bg-dark">
             <div class="container">
                 <div class="row">
                     <!-- Contact Info -->
@@ -112,7 +112,7 @@
                     </div>
                 </div>
         </footer>
-    </main>
+  
 
     {% block script %}
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
