@@ -26,11 +26,11 @@
   
         <div class="alert alert-info text-center mb-0 fs-5" role="alert">
             {% if user.is_authenticated %}
-            Welcome, {{ user.username }}!
+            Welcome, <strong class="text-warning">{{ user.username }}</strong>!
             <a href="{{ logout_url }}" class="alert-link fs-5">Sign Out</a>
             {% else %}
             Join our foodie family!
-            <a href="{% url 'account_login' %}" class="alert-link fs-5">Sign In</a> to unlock exclusive recipes.
+            <a href="{% url 'account_login' %}" class="alert-link fs-5 text-warning">Sign In</a> to unlock exclusive recipes.
             {% endif %}
         </div>
         <div class="navbar-background">
@@ -67,7 +67,7 @@
                 </span>
                 &nbsp;&nbsp;Leave ratings, reviews and contribute to our growing community.
                 {% else %}
-                Thank you for being part of our community, {{ user.first_name|default:user.username }}!
+                Thank you for being part of our community, <strong class="text-warning">{{ user.first_name|default:user.username }}</strong>!
                 {% endif %}
             </div>
         </div>
