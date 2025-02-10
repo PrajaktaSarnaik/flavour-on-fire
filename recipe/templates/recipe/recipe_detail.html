@@ -79,10 +79,8 @@
 <div class="container">
     <div class="row g-0 align-items-stretch">
         <div class="col-md-12 d-flex flex-column">
-            <!-- Card Column: Text + Image Together -->
             <div class="card mb-4 mt-3 left top flex-fill glow-card">
                 <div class="row g-0">
-                    <!-- Text Column -->
                     <div class="col-md-12 d-flex align-items-start justify-content-center">
                         <div class="card-body p-4">
                             <h3 id="reviews">Reviews:</h3>
@@ -109,7 +107,7 @@
                                         </div>
                                         {% if not comment.approved and comment.author == user %}
                                         <p class="approval">
-                                            This comment is awaiting approval
+                                            Thanks for your review! It’s in the approval queue and will be live once it’s approved. Stay tuned!
                                         </p>
                                         {% endif %}
                                         {% if user.is_authenticated and comment.author == user %}
@@ -120,18 +118,8 @@
                                             data-comment_id="{{ comment.id }}" data-bs-toggle="modal" data-bs-target="#reviewModal">Edit</button>
                                         </div>
                                         {% endif %}
-                                        <!-- {% if user.is_authenticated and comment.author == user %}
-                                        <div class="row gap-3">
-                                            <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
-                                            <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-                                            <button class="btn btn-save d-none" comment_id="{{ comment.id }}">Save</button>
-                                            <button class="btn btn-cancel d-none" comment_id="{{ comment.id }}">Cancel</button>
-                                        </div>
-                                        {% endif %}
-                                        <hr> -->
-                                </div>
+                                    </div>
                             </div>
-                            <!-- Our for loop ends here -->
                             {% endfor %}
                         </div>
                     </div>

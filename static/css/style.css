@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Mea+Culpa&family=Meie+Script&display=swap');
+
 html,
 body {
     min-height: 100vh;
@@ -9,16 +11,7 @@ h5,h3,h2 {
 }
 
 .alert-info{
-    /* background: linear-gradient(135deg, #02AABD, #00CDAC) !important; */
-    /* background: linear-gradient(135deg, #db522c, #F7B733) !important; */
-    /* background: linear-gradient(135deg, #ED1E79, #662D8C) !important; */
-    /* background: linear-gradient(135deg, #ed3938, #ffa12e) !important; */
-    /* background: linear-gradient(135deg,#ffa12e, #f1c40d) !important;  */
-    /* background: linear-gradient(135deg,#163a2a, #1fb7c8) !important;  */
     --bs-alert-bg: #0c4956;
-    /* --bs-alert-bg: #002aff; */
-    /* color: #e8d5f6; */
-    /* color: #7a3b01; */
     color: #d6f7ec;
     border: none;
 }
@@ -64,7 +57,7 @@ h5,h3,h2 {
 }
 
 .nav-item.nav-link:hover::after {
-    background-color: #ffb703; /* Bootstrap primary color */
+    background-color: #ffb703; 
     width: 100%; /* Full width underline on hover */
 }
 /*** Logo ***/
@@ -74,52 +67,53 @@ h5,h3,h2 {
 }
 
 .logo {
-    height: 150px; /* Adjust the height as needed */
-    width: 150px; /* Adjust the width as needed */
+    height: 150px;
+    width: 150px; 
     border-radius: 50%;
     position: absolute;
     top: -70px; /* Adjust the value to control how much the logo extends above the navbar */
     left: 50%;
     transform: translateX(-50%);
-    border: 3px solid white; /* Optional: Add a border to the logo */
+    border: 3px solid white; 
 }
 
 /*** Sign up button ***/
 .signup-button {
-    height: 95px; /* Adjust the height as needed */
-    width: 95px; /* Adjust the width as needed */
+    height: 95px; 
+    width: 95px; 
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: none; /* Optional: Add a border to the button */
-    background-color: #fbcb0c; /* Bootstrap primary color */
+    border: none; 
+    background-color: #fbcb0c; 
     color: black;
-    /* transform: translateX(-120%); */
     text-decoration: none;
     transition: background-color 0.3s ease;
-    margin-top: -30px; /* Adjust the value to control how much the button extends above the stripe */
-    margin-bottom: -30px; /* Adjust the value to control how much the button extends below the stripe */
+    margin-top: -30px; 
+    margin-bottom: -30px; 
 }
 
 .signup-button:hover {
-    background-color: #111111; /* Darker shade of the primary color */
+    background-color: #111111; 
 }
 
 /*** Hero Section ***/
+
+.font-style{
+    font-family: 'Courgette', sans-serif;
+}
 /* Ensure the video and content are responsive */
 
 .carousel-item .row {
     display: flex;
     align-items: stretch; /* Ensure both columns match the height */
-   
     max-height: 485px;  /* Adjust to desired height */
     overflow: hidden;
 
 }
 
 .carousel-content{
-    /* background-color: #ffebcd; */
     background: linear-gradient(135deg, #ffebcd, #f3d7d7);
     display: flex;
     align-items: center; /* Center the content vertically */
@@ -132,9 +126,9 @@ h5,h3,h2 {
 }
 
 .carousel-indicators {
-    margin-top: 10px; /* Spacing below <h3> */
-    justify-content: center; /* Center the indicators */
-    gap: 8px; /* Space between indicators */
+    margin-top: 10px; 
+    justify-content: center;
+    gap: 8px; 
 }
 
 
@@ -160,7 +154,7 @@ h5,h3,h2 {
 
 .carousel-item video {
     width: 100%;
-    height: 100%; /* Make video fill its container */
+    height: 100%; 
     object-fit: cover; /* Ensure the video covers the space without distortion */
 }
 
@@ -180,7 +174,7 @@ h5,h3,h2 {
 }
 
 .recipe-title{
-    color: #fb8500; /* Recipe title color */
+    color: #fb8500; 
 }
 
 .recipe-link {
@@ -209,7 +203,7 @@ h5,h3,h2 {
 /* Image container stays consistent */
 .image-container {
     width: 100%;
-    height: 300px; /* Adjust the height as needed */
+    height: 300px; 
     overflow: hidden;
 }
 
@@ -231,8 +225,8 @@ h5,h3,h2 {
 }
 /* Recipe Entries Column */
 .recipe-entry .card-img-top {
-    width: 100%; /* Set the width to 100% of the parent element */
-    height: 300px; /* Set a fixed height for the image */
+    width: 100%; 
+    height: 300px; 
     object-fit: cover; /* Ensure the image covers the area without stretching */
 }
 
@@ -252,38 +246,38 @@ h5,h3,h2 {
     /* background: linear-gradient(135deg, #ffebcd, #f3d7d7); */
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem; /* Reduced padding */
+    padding: 1.5rem; 
     width: 100%;
-    max-width: 600px; /* Smaller width */
+    max-width: 600px; 
     margin: 0 auto;
 }
 
 .custom-card h3 {
-    color: #fb5607; /* Sign-in heading color */
-    font-size: 1.8rem; /* Smaller heading */
+    color: #fb5607; 
+    font-size: 1.8rem; 
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
 .card-title h1{
-    color: #fb5607; /* Sign-in heading color */
+    color: #fb5607; 
 }
 
 /* Form Input Fields */
 input, textarea, select {
     border-radius: 8px;
-    padding: 10px; /* Smaller padding */
+    padding: 10px;
     width: 100%;
-    margin-bottom: 0.8rem; /* Reduced margin */
+    margin-bottom: 0.8rem; 
     border: 2px solid #bad7de;
     background-color: #f1f1f1;
     color: #333;
-    font-size: 0.9rem; /* Smaller font */
+    font-size: 0.9rem; 
 }
 
 input:focus, textarea:focus {
     outline: none;
-    border-color: #ffb703; /* Focused border color */
+    border-color: #ffb703; 
     box-shadow: 0 0 8px rgba(255, 183, 3, 0.6);
 }
 
@@ -293,22 +287,22 @@ input:focus, textarea:focus {
 .btn-signout,
 .btn-edit,
 .btn-delete {
-    background-color: #ffb703; /* Button color */
+    background-color: #ffb703; 
     color: black;
     border: none;
-    padding: 10px 5px; /* Reduced padding */
-    font-size: 0.9rem; /* Smaller font size */
+    padding: 10px 5px; 
+    font-size: 0.9rem; 
     font-weight: bold;
     border-radius: 8px;
     width: 20%;
     transition: background-color 0.3s ease;
-    display: block; /* Make the button a block element */
+    display: block; 
     
 }
 .btn-signin,
 .btn-signup,
 .btn-signout{
-    margin: 0 auto; /* Center the button horizontally */
+    margin: 0 auto; 
 }
 
 .btn-signin:hover,
@@ -316,7 +310,7 @@ input:focus, textarea:focus {
 .btn-signout:hover,
 .btn-edit:hover,
 .btn-delete:hover {
-    background-color: #111111; /* Darker hover effect */
+    background-color: #111111; 
     color: #fff;
   
 }
@@ -392,12 +386,12 @@ ul.errorlist li {
 
 .masthead-image img {
     object-fit: cover; /* Ensure the image covers the area without stretching */
-    height: 100%; /* Match the height of the parent element */
-    width: 100%; /* Ensure the image takes the full width of the parent element */
+    height: 100%; 
+    width: 100%; 
 }
 
 
-/******* Django messages *********/
+/******* Messages *********/
 p.approval {
     background-color: lightblue;
     width: 50%;
@@ -408,13 +402,8 @@ p.approval {
 .footer {
     background-color: #0c4956;
     color: #eef0f3;
-    /* Light text for contrast */
     font-size: 0.9rem;
-
-    /* Reduce vertical padding */
     margin-top: 25px;
-    /* Adds space between the footer and the content above */
-
 }
 
 .bg-dark{
@@ -426,7 +415,6 @@ p.approval {
 .footer a:hover {
     text-decoration: underline;
     color: #ffffff;
-    /* Add a soft green hover effect */
 }
 
 .footer h5 {
@@ -453,12 +441,10 @@ p.approval {
 }
 /************* Authors *****************/
 .profile-image {
-    width: 200px; /* Adjust the size as needed */
-    height: 200px; /* Ensure the height matches the width to make it circular */
-    border-radius: 50%; /* Make the image circular */
-    object-fit: cover; /* Ensure the image covers the area without stretching */
-    /* border: 1px solid black;  */
-    /* Optional: Add a border to the image */
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%; 
+    object-fit: cover; 
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.15), 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 .author-container {
