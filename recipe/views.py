@@ -9,19 +9,22 @@ from .forms import CommentForm
 from .forms import RecipeForm
 from django.db.models import F
 
+
 @login_required
 def chef_special(request):
     # Check if the user is authenticated
     if request.user.is_authenticated:
-         # Get all author titles
+        # Get all author titles
         author_titles = Author.objects.values_list('title', flat=True)
-        
-        # Filter recipes where the author's username matches any title in the Author model
-        recipes = Recipe.objects.filter(author__username__in=author_titles, status=1)
-        return render(request, 'recipe/chef_special.html', {'recipe_list': recipes})
+        # Filter recipes where the author's username matches
+        # any title in the Author model
+        recipes = Recipe.objects.filter(author__username__in=author_titles,
+                                        status=1)
+        return render(request, 'recipe/chef_special.html',
+                      {'recipe_list': recipes})
     else:
         # Redirect to the login page with a 'next' parameter
-        return redirect('account_login')  
+        return redirect('account_login')
 
 
 class RecipeList(generic.ListView):
@@ -48,12 +51,10 @@ class RecipeList(generic.ListView):
         recipes = Recipe.objects.filter(status=1)
         print("All Recipes:", recipes)  # Debug print
         author_titles = Author.objects.values_list('title', flat=True)
-        
         filtered_recipes = recipes.exclude(author__username__in=author_titles)
-        print("Filtered Recipes (excluding admin):", filtered_recipes)  # Debug print
-
+        print("Filtered Recipes (excluding admin):", filtered_recipes)
         return filtered_recipes
-    
+
 
 def recipe_detail(request, slug):
     """
@@ -116,9 +117,11 @@ def comment_edit(request, slug, comment_id):
             comment.recipe = recipe
             comment.approved = False
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+            messages.add_message(request, messages.SUCCESS,
+                                 'Comment Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating comment!')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
 
@@ -135,10 +138,10 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('recipe_detail', args=[slug]))
-
 
 
 @login_required
@@ -150,11 +153,16 @@ def share_recipe(request):
             recipe.author = request.user
             recipe.status = 0  # Set status to 'Draft' for admin approval
             recipe.save()
-            messages.add_message(request, messages.SUCCESS, "Thanks for sharing your recipe! It's on its way for approval and will be live in the Recipe section once it's approved. Stay tuned!")
+            messages.add_message(request, messages.SUCCESS,
+                                 "Thanks for sharing your recipe! It's on "
+                                 "its way for approval and will be live in "
+                                 "the Recipe section once it's approved. "
+                                 "Stay tuned!")
             form = RecipeForm()
             # return redirect('home')
         else:
-            messages.add_message(request, messages.ERROR, 'Error submitting recipe!')
+            messages.add_message(request, messages.ERROR,
+                                 'Error submitting recipe!')
     else:
         form = RecipeForm()
     return render(request, 'recipe/share_recipe.html', {'form': form})

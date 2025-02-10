@@ -30,7 +30,8 @@ class Recipe(models.Model):
     recipe_id = models.AutoField(primary_key=True)
     recipe_title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
-    author = models.ForeignKey(User, related_name='recipe_author', on_delete=models.CASCADE)
+    author = models.ForeignKey(User, related_name='recipe_author',
+                               on_delete=models.CASCADE)
     featured_image = CloudinaryField('image', default='placeholder')
     diet = models.IntegerField(choices=DIET, default=3)
     introduction = models.TextField()
@@ -46,7 +47,8 @@ class Recipe(models.Model):
 
     def __str__(self):
         return f"{self.recipe_title} | written by {self.author}"
-    
+
+
 @receiver(pre_save, sender=Recipe)
 def generate_slug(sender, instance, **kwargs):
     if not instance.slug:
@@ -57,11 +59,11 @@ def generate_slug(sender, instance, **kwargs):
             unique_slug = f"{instance.slug}-{num}"
             num += 1
         instance.slug = unique_slug
-    
-    
+
+
 class Comment(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE,
-                             related_name="comments")
+                               related_name="comments")
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="commenter")
     rating = models.IntegerField(choices=RATING_STARS, default=1)
