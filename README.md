@@ -46,9 +46,9 @@ At its core, the project allows users to share their unique recipes, discover ch
   - [Connecting to GitHub](#connecting-to-github)
   - [Django Project Setup](#django-project-setup)
   - [Cloudinary API](#cloudinary-api)
-  - [Elephant SQL](#elephant-sql)
+  - [Postgre SQL](#postgre-sql)
   - [Heroku deployment](#heroku-deployment)
-- [AI Assistance in Development ](#ai-assistance-in-dvelopment)
+- [AI Assistance in Development](#ai-assistance-in-dvelopment)
 - [Credits](#credits)
   - [Code](#code)
   - [Media](#media)
@@ -338,3 +338,201 @@ For future development of the Flavour On Fire website, several features could en
 # Testing
 
 - For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+# Deployment
+
+## Connecting to GitHub
+
+### Step 1: Install Prerequisites
+
+Make sure you have the following installed:
+
+- **Python** (Django requires Python 3.6 or later)
+- **Git** (for version control and GitHub integration)
+- **Visual Studio Code (VSCode)** (code editor)
+- **Django** (you will install it later)
+- **GitHub Account** (for hosting your repository)
+
+If you don't have these tools, you can download and install them:
+
+- Python: [Download Python](https://www.python.org/downloads/)
+- Git: [Download Git](https://git-scm.com/downloads)
+- VSCode: [Download VSCode](https://code.visualstudio.com/)
+- GitHub: [Sign up for GitHub](https://github.com/)
+
+### Step 2: Set Up a GitHub Repository
+
+1. **Create a new repository on GitHub:**
+   - Go to [GitHub](https://github.com/).
+   - Click on **New** to create a new repository.
+   - Provide a repository name, description, and set it to either public or private.
+   - Do not initialize the repository with a README, license, or .gitignore (you will do this later).
+
+2. **Copy the repository URL:**
+   - After the repository is created, copy the HTTPS URL (e.g., `https://github.com/username/repository-name.git`).
+
+### Step 3: Set Up Visual Studio Code
+
+1. **Open VSCode:**
+   - Launch Visual Studio Code.
+
+2. **Install Python Extension for VSCode:**
+   - Press `Ctrl+P` (or `Cmd+P` on macOS) and type `ext install ms-python.python` to install the Python extension.
+   - This will enable features like IntelliSense, debugging, and linting for Python.
+
+3. **Install Git Extension for VSCode:**
+   - VSCode usually comes with Git support by default, but you can also check if it is installed by typing `git` in the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P`) and confirming the Git-related actions are available.
+
+### Step 4: Clone the GitHub Repository Locally
+
+1. **Clone the repository to your local machine:**
+   - Open the terminal in VSCode (`Ctrl+` or `Cmd+`).
+   - Navigate to the directory where you want to clone the project.
+   - Run the following command:
+     ```bash
+     git clone https://github.com/username/repository-name.git
+     ```
+   - Replace `username/repository-name` with your GitHub repository name.
+   
+2. **Navigate into the cloned repository:**
+   ```bash
+   cd repository-name
+
+## Django Project Setup
+
+1. Install Django and supporting libraries: 
+   
+- ```pip3 install 'django<4' gunicorn```
+- ```pip3 install dj_database_url psycopg2```
+- ```pip3 install dj3-cloudinary-storage```  
+  
+2. Once you have installed any relevant dependencies or libraries, such as the ones listed above, it is important to create a **requirements.txt** file and add all installed libraries to it with the ```pip3 freeze --local > requirements.txt``` command in the terminal.  
+3. Create a new Django project in the terminal ```django-admin startproject freefido .```
+4. Create a new app eg. ```python3 mangage.py startapp booking```
+5. Add this to list of **INSTALLED_APPS** in **settings.py** - 'booking',
+6. Create a superuser for the project to allow Admin access and enter credentials: ```python3 manage.py createsuperuser```
+7. Migrate the changes with commands: ```python3 manage.py migrate```
+8. An **env.py** file must be created to store all protected data such as the **DATABASE_URL** and **SECRET_KEY**. These may be called upon in your project's **settings.py** file along with your Database configurations. The **env.py** file must be added to your **gitignore** file so that your important, protected information is not pushed to public viewing on GitHub. For adding to **env.py**:
+
+- ```import os```
+- ```os.environ["DATABASE_URL"]="<copiedURLfromElephantSQL>"```
+- ```os.environ["SECRET_KEY"]="my_super^secret@key"```
+  
+For adding to **settings.py**:
+
+- ```import os```
+- ```import dj_database_url```
+- ```if os.path.exists("env.py"):```
+- ```import env```
+- ```SECRET_KEY = os.environ.get('SECRET_KEY')``` (actual key hidden within env.py)  
+
+9. Replace **DATABASES** with:
+
+```
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+  }
+```
+
+10. Set up the templates directory in **settings.py**:
+- Under ``BASE_DIR`` enter ``TEMPLATES_DIR = os.path.join(BASE_DIR, ‘templates’)``
+- Update ``TEMPLATES = 'DIRS': [TEMPLATES_DIR]`` with:
+
+```
+os.path.join(BASE_DIR, 'templates'),
+os.path.join(BASE_DIR, 'templates', 'allauth')
+```
+
+- Create the media, static and templates directories in top level of project file in IDE workspace.
+
+11. A **Procfile** must be created within the project repo for Heroku deployment with the following placed within it: ```web: gunicorn freefido.wsgi```
+12. Make the necessary migrations again.
+
+## Postgre SQL
+
+1. Navigate to [PostgreSQL](https://dbs.ci-dbs.net/) from Code Institute.
+2. Follow the steps on the website. (I referred Code Institute's LMS for this setup)
+3. Once the URL is received through an email then follow the steps below:
+  - Create new env.py file and add 
+    os.environ.setdefault(
+        "DATABASE_URL", "<your-database-URL>")
+  - Then install
+  ```
+    pip3 install dj-database-url~=0.5 psycopg2~=2.9
+    pip3 freeze --local > requirements.txt
+  ```
+4. Add the url in settings.py file.
+5. Migrate the database.
+  ```
+    python3 manage.py migrate
+  ```
+
+## Cloudinary API 
+
+Cloudinary provides a cloud hosting solution for media storage. All users uploaded images in the FreeFid project are hosted here.
+
+Set up a new account at [Cloudinary](https://cloudinary.com/) and add your Cloudinary API environment variable to your **env.py** and Heroku Config Vars.
+In your project workspace: 
+
+- Add Cloudinary libraries to INSTALLED_APPS in settings.py 
+- In the order: 
+```
+   'cloudinary_storage',  
+   'django.contrib.staticfiles',  
+   'cloudinary',
+```
+- Add to **env.py** and link up with **settings.py**: ```os.environ["CLOUDINARY_URL"]="cloudinary://...."``` 
+- Set Cloudinary as storage for media and static files in settings.py:
+- ```STATIC_URL = '/static/'```
+```
+  STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'  
+  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]  
+  STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')‌  
+  MEDIA_URL = '/media/'  
+  DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+```
+## Heroku deployment
+
+To start the deployment process , please follow the below steps:
+
+1. Log in to [Heroku](https://id.heroku.com/login) or create an account if you are a new user.
+2. Once logged in, in the Heroku Dashboard, navigate to the '**New**' button in the top, right corner, and select '**Create New App**'.
+3. Enter an app name and choose your region. Click '**Create App**'. 
+4. In the Deploy tab, click on the '**Settings**', reach the '**Config Vars**' section and click on '**Reveal Config Vars**'. Here you will enter KEY:VALUE pairs for the app to run successfully. The KEY:VALUE pairs that you will need are your: 
+   
+   - **CLOUDINARY_URL**: **cloudinary://....** 
+   - **DATABASE_URL**:**postgres://...** 
+   - **DISABLE_COLLECTSTATIC** of value '1' (N.B Remove this Config Var before deployment),
+   -  **PORT**:**8000**
+   -  **SECRET_KEY** and value  
+  
+5. Add the Heroku host name into **ALLOWED_HOSTS** in your projects **settings.py file** -> ```['herokuappname', ‘localhost’, ‘8000 port url’].```
+6. Once you are sure that you have set up the required files including your requirements.txt and Procfile, you have ensured that **DEBUG=False**, save your project, add the files, commit for initial deployment and push the data to GitHub.
+7. Go to the '**Deploy**' tab and choose GitHub as the Deployment method.
+8. Search for the repository name, select the branch that you would like to build from, and connect it via the '**Connect**' button.
+9.  Choose from '**Automatic**' or '**Manual**' deployment options, I chose the 'Manual' deployment method. Click '**Deploy Branch**'.
+10. Once the waiting period for the app to build has finished, click the '**View**' link to bring you to your newly deployed site. If you receive any errors, Heroku will display a reason in the app build log for you to investigate. **DISABLE_COLLECTSTATIC**  may be removed from the Config Vars once you have saved and pushed an image within your project, as can **PORT:8000**.
+
+<hr>
+
+# AI Assistance in Development
+
+- **Code Autocompletion & Suggestions :**
+AI tools like GitHub Copilot have been game-changers for me. They offer real-time code suggestions, which not only speed up development but also help when I’m stuck figuring out syntax or structure. It’s like having a coding buddy who knows every language!
+
+- **Bug Detection & Error Prevention :**
+GitHub Copilot have saved me countless hours by catching errors I would’ve missed, especially in large projects. It’s reassuring to know that AI can spot potential vulnerabilities before I even hit run.
+
+- **Automated Testing & Debugging :**
+Writing test cases used to be tedious, but with AI generating unit tests, I can focus more on building features. AI-assisted debugging also helps pinpoint tricky issues faster than manually sifting through logs.
+
+- **Automated Code Review & Refactoring :**
+AI-powered code review tools help maintain clean and consistent code. They’ve improved my workflow by catching small mistakes and suggesting optimizations I wouldn’t have thought of, making my code more efficient and readable.
+
+# Credits
+
+- [Django Docs](https://www.djangoproject.com/)
+- [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Code Institute's](https://github.com/Code-Institute-Org>) 'I Think Therefore I Blog' walkthrough
+- [Pexels](https://www.pexels.com/)
+- [Unsplash](https://unsplash.com/)
