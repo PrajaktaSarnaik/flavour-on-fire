@@ -54,6 +54,17 @@ All HTML pages were validated and returned a 'No errors or warnings to show' res
 
 ![Sign Out HTML validator Screenshot](static/readme_images/validation_and_testing/sign_out_html_validator.PNG)
 
+| HTML Source Code/Page | Errors | Warnings |
+| ---- | ------ | -------- | 
+| Home | 0 | 0 |
+| Sign In | 0 | 0 |
+| Sign Out | 0 | 0 |
+| Recipe Detail | 1 | 0 |
+| Chef's Special | 0 | 0 |
+| Our Chefs | 0 | 0 |
+| Share your recipe | 0 | 0 |
+
+<hr>
 
 ### CSS Validation
 
@@ -61,3 +72,40 @@ I've used the W3C CSS Validator to ensure that my stylesheets are error-free and
 
 ![CSS validator Screenshot](static/readme_images/validation_and_testing/css_validator.PNG)
 
+<hr>
+
+### JavaScript Validation
+
+[JSHint](https://jshint.com/) was used to validate the small amount of JavaScript code added to the project. External JS, for Bootstrap purposes, obtained via [CDN](https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js) was not validated through JSHint
+
+![print JS](static/readme_images/validation_and_testing/script_js_validator.PNG)
+*Used for print button logic*
+
+![comment JS](static/readme_images/validation_and_testing/comments_js_validator.PNG) 
+*Used to edit and update comments*
+
+
+| Page |  sed For |  Errors | Warnings |
+| ---- | ----------- |------ | -------- |
+| recipe_detail.html | Used for print button logic | none | none |
+| recipe_detail.html | Used to edit and update comments | none | none |
+
+
+### Python Validation
+
+[CI Python Linter](https://pep8ci.herokuapp.com/#) was used to validate the Python files that were created or edited by myself. No issues presented and line lengths were double checked. I have included some screenshots of validation of python files used within apps.
+
+Please click on **"no errors"** to view respective screenshot.
+
+| Feature | admin.py | forms.py | models.py | urls.py | views.py |
+|---------|----------|----------|-----------|---------|----------|
+| Recipe | [no errors](static/readme_images/python_validation/recipe_admin_py.PNG) | [no errors](static/readme_images/python_validation/recipe_forms_py.PNG) | [no errors](static/readme_images/python_validation/recipe_models_py.PNG) | [no errors](static/readme_images/python_validation/recipe_urls_py.PNG) | [no errors](static/readme_images/python_validation/recipe_views_py.PNG) |
+| Author  | [no errors](static/readme_images/python_validation/author_admin_py.PNG) | N/A | [no errors](static/readme_images/python_validation/author_models_py.PNG) | [no errors](static/readme_images/python_validation/author_urls_py.PNG) | [no errors](static/readme_images/python_validation/author_views_py.PNG) |
+
+Here are some screenshots of validation of python files used within **Flavour** project.
+
+![settings py file](static/readme_images/python_validation/flavour_settings_py.PNG)
+*Validation of Settings.py*
+
+![urls py file](static/readme_images/python_validation/flavour_urls_py.PNG)
+*Validation of project's urls.py*
