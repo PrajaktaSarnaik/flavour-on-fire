@@ -1,20 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Mea+Culpa&family=Meie+Script&display=swap');
+
 html,
 body {
     min-height: 100vh;
     scroll-behavior: smooth;
 }
 
+h5,h3,h2 {
+    color: #fb5607;
+}
+
 .alert-info{
-    /* background: linear-gradient(135deg, #02AABD, #00CDAC) !important; */
-    /* background: linear-gradient(135deg, #db522c, #F7B733) !important; */
-    /* background: linear-gradient(135deg, #ED1E79, #662D8C) !important; */
-    /* background: linear-gradient(135deg, #ed3938, #ffa12e) !important; */
-    /* background: linear-gradient(135deg,#ffa12e, #f1c40d) !important;  */
-    /* background: linear-gradient(135deg,#163a2a, #1fb7c8) !important;  */
     --bs-alert-bg: #0c4956;
-    /* --bs-alert-bg: #002aff; */
-    /* color: #e8d5f6; */
-    /* color: #7a3b01; */
     color: #d6f7ec;
     border: none;
 }
@@ -60,62 +57,78 @@ body {
 }
 
 .nav-item.nav-link:hover::after {
-    background-color: #ffb703; /* Bootstrap primary color */
+    background-color: #ffb703; 
     width: 100%; /* Full width underline on hover */
 }
 /*** Logo ***/
 .logo-container {
     position: relative;
+    display: inline-block;
 }
 
 .logo {
-    height: 150px; /* Adjust the height as needed */
-    width: 150px; /* Adjust the width as needed */
+    height: 150px;
+    width: 150px; 
     border-radius: 50%;
     position: absolute;
     top: -70px; /* Adjust the value to control how much the logo extends above the navbar */
     left: 50%;
     transform: translateX(-50%);
-    border: 3px solid white; /* Optional: Add a border to the logo */
+    border: 3px solid white; 
 }
 
 /*** Sign up button ***/
 .signup-button {
-    height: 95px; /* Adjust the height as needed */
-    width: 95px; /* Adjust the width as needed */
+    height: 95px; 
+    width: 95px; 
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    border: none; /* Optional: Add a border to the button */
-    background-color: #fbcb0c; /* Bootstrap primary color */
+    border: none; 
+    background-color: #fbcb0c; 
     color: black;
-    /* transform: translateX(-120%); */
     text-decoration: none;
     transition: background-color 0.3s ease;
-    margin-top: -30px; /* Adjust the value to control how much the button extends above the stripe */
-    margin-bottom: -30px; /* Adjust the value to control how much the button extends below the stripe */
+    margin-top: -30px; 
+    margin-bottom: -30px; 
 }
 
 .signup-button:hover {
-    background-color: #111111; /* Darker shade of the primary color */
+    background-color: #111111; 
 }
 
 /*** Hero Section ***/
+
+.font-style{
+    font-family: 'Courgette', sans-serif;
+}
 /* Ensure the video and content are responsive */
-.carousel-item{
-    height: 60vh;
+
+.carousel-item .row {
+    display: flex;
+    align-items: stretch; /* Ensure both columns match the height */
+    max-height: 485px;  /* Adjust to desired height */
+    overflow: hidden;
+
 }
 
 .carousel-content{
-    /* background-color: #ffebcd; */
     background: linear-gradient(135deg, #ffebcd, #f3d7d7);
+    display: flex;
+    align-items: center; /* Center the content vertically */
+    justify-content: center; /* Center the content horizontally */
+    padding: 2rem;
+}
+
+.carousel-content h3{
+    color: #000;
 }
 
 .carousel-indicators {
-    margin-top: 10px; /* Spacing below <h3> */
-    justify-content: center; /* Center the indicators */
-    gap: 8px; /* Space between indicators */
+    margin-top: 10px; 
+    justify-content: center;
+    gap: 8px; 
 }
 
 
@@ -141,7 +154,8 @@ body {
 
 .carousel-item video {
     width: 100%;
-    height: auto;
+    height: 100%; 
+    object-fit: cover; /* Ensure the video covers the space without distortion */
 }
 
 .carousel-item .p-4 {
@@ -150,6 +164,19 @@ body {
 
 
 /******* Recipe Posts *******/
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+}
+.col-md-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-title{
+    color: #fb8500; 
+}
+
 .recipe-link {
     text-decoration: none;
     color: #E84610;
@@ -159,12 +186,47 @@ body {
 .page-link {
     color: #ffb703;
 }
+/* Make card take full height of its container */
+.card.recipe-entry {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
-/* Recipe Entries Column */
+/* Make the card body expand to fill available space */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push content to top and bottom */
+}
+
+/* Image container stays consistent */
+.image-container {
+    width: 100%;
+    height: 300px; 
+    overflow: hidden;
+}
+
+/* Make sure the image fills its container without distortion */
+.card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the area */
+}
+
+/* Keep the introduction text consistent */
+.introduction {
+    margin-bottom: auto; /* Pushes the introduction upwards */
+}
+
+/* Ensure consistent button positioning */
+.card .recipe-link {
+    margin-top: auto; /* Push link to the bottom */
+}
 /* Recipe Entries Column */
 .recipe-entry .card-img-top {
-    width: 100%; /* Set the width to 100% of the parent element */
-    height: 300px; /* Set a fixed height for the image */
+    width: 100%; 
+    height: 300px; 
     object-fit: cover; /* Ensure the image covers the area without stretching */
 }
 
@@ -176,73 +238,95 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+
 /*************** Form ***********/
 /* Card Styling for Form */
 .custom-card {
     /* background: linear-gradient(135deg, #ffebcd, #f3d7d7); */
     border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem; /* Reduced padding */
+    padding: 1.5rem; 
     width: 100%;
-    max-width: 600px; /* Smaller width */
+    max-width: 600px; 
     margin: 0 auto;
 }
 
 .custom-card h3 {
-    color: #E84610; /* Sign-in heading color */
-    font-size: 2.3rem; /* Smaller heading */
+    color: #fb5607; 
+    font-size: 1.8rem; 
     font-weight: bold;
     margin-bottom: 1rem;
+}
+
+.card-title h1{
+    color: #fb5607; 
 }
 
 /* Form Input Fields */
 input, textarea, select {
     border-radius: 8px;
-    padding: 10px; /* Smaller padding */
+    padding: 10px;
     width: 100%;
-    margin-bottom: 0.8rem; /* Reduced margin */
+    margin-bottom: 0.8rem; 
     border: 2px solid #bad7de;
     background-color: #f1f1f1;
     color: #333;
-    font-size: 0.9rem; /* Smaller font */
+    font-size: 0.9rem; 
 }
 
 input:focus, textarea:focus {
     outline: none;
-    border-color: #ffb703; /* Focused border color */
+    border-color: #ffb703; 
     box-shadow: 0 0 8px rgba(255, 183, 3, 0.6);
 }
 
 /* Submit Button */
 .btn-signin,
 .btn-signup,
-.btn-signout {
-    background-color: #ffb703; /* Button color */
-    color: white;
+.btn-signout,
+.btn-edit,
+.btn-delete {
+    background-color: #ffb703; 
+    color: black;
     border: none;
-    padding: 10px 5px; /* Reduced padding */
-    font-size: 0.9rem; /* Smaller font size */
+    padding: 10px 5px; 
+    font-size: 0.9rem; 
     font-weight: bold;
     border-radius: 8px;
-    width: 15%;
+    width: 20%;
     transition: background-color 0.3s ease;
-    display: block; /* Make the button a block element */
-    margin: 0 auto; /* Center the button horizontally */
+    display: block; 
+    
+}
+.btn-signin,
+.btn-signup,
+.btn-signout{
+    margin: 0 auto; 
 }
 
 .btn-signin:hover,
 .btn-signup:hover,
-.btn-signout:hover {
-    background-color: #111111; /* Darker hover effect */
+.btn-signout:hover,
+.btn-edit:hover,
+.btn-delete:hover {
+    background-color: #111111; 
     color: #fff;
   
 }
 /* Adding a subtle shadow to the button on hover */
 .btn-signin:focus,
 .btn-signup:focus,
-.btn-signout:focus{
+.btn-signout:focus,
+.btn-edit:focus,
+.btn-delete:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(255, 183, 3, 0.7);
+}
+
+.bg-warning{
+    border: none;
+    font-weight: bold;
 }
 
 /* Additional spacing and layout adjustments for the form */
@@ -281,6 +365,7 @@ ul.errorlist li {
 
 /************ Cards ************/
 /* Card shadow effect */
+
 .recipe-entry:nth-child(3n+1), 
 .card{
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.15), 0 6px 18px rgba(0, 0, 0, 0.1);
@@ -301,12 +386,12 @@ ul.errorlist li {
 
 .masthead-image img {
     object-fit: cover; /* Ensure the image covers the area without stretching */
-    height: 100%; /* Match the height of the parent element */
-    width: 100%; /* Ensure the image takes the full width of the parent element */
+    height: 100%; 
+    width: 100%; 
 }
 
 
-/******* Django messages *********/
+/******* Messages *********/
 p.approval {
     background-color: lightblue;
     width: 50%;
@@ -317,13 +402,8 @@ p.approval {
 .footer {
     background-color: #0c4956;
     color: #eef0f3;
-    /* Light text for contrast */
     font-size: 0.9rem;
-    padding: 10px 0;
-    /* Reduce vertical padding */
     margin-top: 25px;
-    /* Adds space between the footer and the content above */
-
 }
 
 .bg-dark{
@@ -335,12 +415,12 @@ p.approval {
 .footer a:hover {
     text-decoration: underline;
     color: #ffffff;
-    /* Add a soft green hover effect */
 }
 
 .footer h5 {
+    color: #ffb703;
     font-weight: 600;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 .footer ul {
@@ -349,7 +429,7 @@ p.approval {
 }
 
 .footer ul li {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.1rem;
 }
 
 .footer ul li a {
@@ -359,19 +439,54 @@ p.approval {
 .bi {
     font-size: 1.2rem;
 }
-
-/*********** Media Queries ************/
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .card-img-top {
-        height: 150px;
-    }
-    .custom-card {
-        padding: 1rem;
-        width: 90%; /* Adjust form width on smaller screens */
-    }
-    .btn-signin {
-        padding: 8px 12px; /* Smaller button padding for smaller screens */
-    }
+/************* Authors *****************/
+.profile-image {
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.15), 0 6px 18px rgba(0, 0, 0, 0.5);
 }
+.author-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.author-summary {
+    cursor: pointer;
+}
+
+.author-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.author-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.accordion-body {
+    padding: 1rem;
+}
+
+.accordion-item .author-intro {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/************** Rating Star ****************** */
+
+.star-rating i {
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.star-rating i:hover {
+    color: gold;
+}
+
 
