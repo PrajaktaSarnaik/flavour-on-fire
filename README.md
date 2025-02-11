@@ -63,7 +63,7 @@ The design inspiration for Flavour On Fire stems from the vibrant aesthetics of 
 
 ### Wireframes
 
-[Balsamiq](https://balsamiq.com/) wireframes were used during the design phase of Flavour On Fire to quickly sketch and plan the layout of the website. This tool allowed me to create low-fidelity mockups of the user interface, focusing on the structure and functionality rather than visual details. Using Balsamiq, I was able to efficiently map out key features and navigation flows, helping to clarify how users would interact with the site. The simple, hand-drawn style of the wireframes made it easier to iterate quickly, gather feedback and refine the design before moving into more detailed stages of development. This approach facilitated better collaboration and ensured that the design met the core user needs early in the process.
+[Balsamiq](https://balsamiq.com/?gad_source=1&gclid=CjwKCAiAh6y9BhBREiwApBLHC0jMpx6kH3JjotDkFcIMUXwk7OeEREAduS6O84rCL3cecis-LOkWQhoCSscQAvD_BwE) wireframes were used during the design phase of Flavour On Fire to quickly sketch and plan the layout of the website. This tool allowed me to create low-fidelity mockups of the user interface, focusing on the structure and functionality rather than visual details. Using Balsamiq, I was able to efficiently map out key features and navigation flows, helping to clarify how users would interact with the site. The simple, hand-drawn style of the wireframes made it easier to iterate quickly, gather feedback and refine the design before moving into more detailed stages of development. This approach facilitated better collaboration and ensured that the design met the core user needs early in the process.
 
 #### Large Screen View:
 ![Window View](static/readme_images/wireframes/window.PNG)
@@ -305,3 +305,30 @@ For future development of the Flavour On Fire website, several features could en
 
 - **User Profiles with Activity History:** Enhancing user profiles to include activity history will create a more personalized experience on the platform. Users will be able to view their submitted recipes, track reviews and ratings they've given or received, and access their bookmarked or favorited recipes. This feature would foster a sense of ownership and engagement, encouraging users to be more active within the community. It could also include badges or milestones to celebrate user contributions, such as the number of recipes shared or reviews written.
 
+# Technologies & Languages Used
+
+- HTML 5
+- CSS
+- JavaScript
+- Python
+- [Git](https://git-scm.com/) used for version control.
+- [Github](https://www.github.com) used for online storage of codebase and Projects tool.
+- [Balsamiq](https://balsamiq.com/?gad_source=1&gclid=CjwKCAiAh6y9BhBREiwApBLHC0jMpx6kH3JjotDkFcIMUXwk7OeEREAduS6O84rCL3cecis-LOkWQhoCSscQAvD_BwE) for project design planning and wireframe creation.
+- [Django](https://www.djangoproject.com/) was used as the Python framework for the site.
+- [Cloudinary](https://cloudinary.com/) was used for cloud media storage of user uploaded images.
+- [PostgreSQL](https://www.postgresql.org/) was used to host the PostgreSQL database needed to collect and recall the users data.
+- [Heroku](https://www.heroku.com) was used to host the FLavor On Fire application.
+
+## Libraries & Frameworks
+
+- Bootstrap v5.3.3
+- Django v5.1.5
+- Django AllAuth v0.57.2
+- Django Crispy Forms v2.3
+- Crispy Bootstrap5 v0.7
+- Django Summernote v0.8.20.0
+- whitenoise v5.3.0
+
+# Testing
+
+- For all testing, please refer to the [TESTING.md](TESTING.md) file.
