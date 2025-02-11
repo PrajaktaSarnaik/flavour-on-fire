@@ -10,7 +10,7 @@ Flavour On Fire is an engaging and vibrant online platform designed for culinary
 
 At its core, the project allows users to share their unique recipes, discover chef’s specials and connect with culinary creators around the globe. The platform offers an intuitive interface for uploading detailed recipes, including ingredients, step-by-step instructions and captivating images of culinary creations. Users can also browse and get inspired by dishes from fellow food lovers, participate in discussions and view recipes from their favorite chefs.
 
-![Responsive Mockup](static\readme_images\am_i_responsive.PNG)
+![Responsive Mockup](static/readme_images/am_i_responsive.PNG)
 
 
 ## Table of Contents
