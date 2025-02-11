@@ -289,5 +289,19 @@ The CRUD (Create, Read, Update, Delete) functionality is a core feature of Flavo
 | **Ratings**       | Yes- Created upon registration or login        | Yes      | Yes- Created upon registration or login        | Yes        |
 | **Reviews**       | Yes- Created upon registration or login        | Yes      | Yes-Created upon registration or login        | Full review deletion is available upon registration and login, the comments dashboard clears the review automatically if a user deletes the review       |
 
+## Future Features
 
+For future development of the Flavour On Fire website, several features could enhance user engagement and improve overall functionality. 
+
+- **Notify user about approval or rejection of a review or recipe**
+
+![Notify User userstory screenshot](static/readme_images/website_features/notify_user.PNG)
+
+- **Recipe Bookmarking and Favorites:** Introducing a bookmarking feature will allow users to save their favorite recipes in personalized folders or categories. This will make it easier for them to revisit dishes they love without having to search for them again. Users could also create custom collections, such as “Weeknight Dinners” or “Holiday Favorites,” to organize their saved recipes according to different themes or occasions.
+
+- **Advanced Search and Filtering:** Implementing a robust search and filtering system will significantly improve user experience by allowing visitors to quickly find recipes that meet their specific criteria. Users could filter recipes based on dietary preferences (like vegetarian, vegan, gluten-free), preparation time, difficulty level, cuisine type, or even by ingredients they already have at home. This feature would make the platform more user-friendly, catering to both novice cooks and seasoned chefs looking for inspiration.
+
+- **Meal Planner and Shopping List Generator:** A meal planner tool would let users create weekly or monthly meal schedules directly from the available recipes. Once meals are selected, the system could automatically generate a consolidated shopping list, organized by ingredient type (e.g., produce, dairy, spices). This not only simplifies meal preparation but also saves time and reduces food waste, as users will buy exactly what they need for their planned dishes.
+
+- **User Profiles with Activity History:** Enhancing user profiles to include activity history will create a more personalized experience on the platform. Users will be able to view their submitted recipes, track reviews and ratings they've given or received, and access their bookmarked or favorited recipes. This feature would foster a sense of ownership and engagement, encouraging users to be more active within the community. It could also include badges or milestones to celebrate user contributions, such as the number of recipes shared or reviews written.
 
