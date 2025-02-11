@@ -16,9 +16,7 @@ Return back to the [README.md](README.md) file.
     - [Lighthouse Scores](#lighthouse-scores)
   - [Manual Testing](#manual-testing)
     - [User Input/Form Validation](#user-inputform-validation)
-    - [Browser Compatibility](#browser-compatibility)
     - [Testing User Stories](#testing-user-stories)
-    - [Dev Tools/Real World Device Testing](#dev-toolsreal-world-device-testing)
   - [Bugs](#bugs)
     - [Known Bugs](#known-bugs)
     
@@ -170,3 +168,9 @@ Here are some screenshots of validation of python files used within **Flavour** 
 | As a **user**, I want to **print a story from the application**, so that **I can have a physical copy for offline reading or sharing.** | Print Recipe | User clicks the print button on a recipe detail page | Print dialog is displayed, and user can print the recipe | Pass |
 
 
+## Bugs 
+### Known Bugs
+
+At present, there are no known bugs. However, it has been observed that the **Rating** field in the **"Comment Form"** and the **Image** field in the **"Share Your Recipe"** form are being submitted without any input, as these fields have default values set in the database. In future updates, I will prioritize enhancing the validation process to enforce these fields as mandatory for form submission, ensuring the integrity and completeness of the data collected.
+
+<hr>
