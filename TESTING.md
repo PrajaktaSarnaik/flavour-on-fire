@@ -16,6 +16,7 @@ Return back to the [README.md](README.md) file.
     - [Lighthouse Scores](#lighthouse-scores)
   - [Manual Testing](#manual-testing)
     - [User Input/Form Validation](#user-inputform-validation)
+    - [Browser Compatibility](#browser-compatibility)
     - [Testing User Stories](#testing-user-stories)
   - [Bugs](#bugs)
     - [Known Bugs](#known-bugs)
@@ -150,6 +151,14 @@ Here are some screenshots of validation of python files used within **Flavour** 
 | Share Recipe | Upload Image | Uploads image | Image displayed | Pass |
 | Share Recipe | Submit | Clicks submit | Recipe added to database | Pass |
 
+### Browser Compatibility
+
+Flavour On Fire was tested on the following browsers, new users were created, old users data edited and all features were tested:
+
+- Chrome v114.0.5735.199
+- Firefox v114.0.2
+- Edge v114.0.1823.79
+- Safari v16.5.1
 
 ### Testing User Stories
 

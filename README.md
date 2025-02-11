@@ -50,10 +50,7 @@ At its core, the project allows users to share their unique recipes, discover ch
   - [Heroku deployment](#heroku-deployment)
 - [AI Assistance in Development](#ai-assistance-in-dvelopment)
 - [Credits](#credits)
-  - [Code](#code)
-  - [Media](#media)
-    - [Additional reading/tutorials/books/blogs](#additional-readingtutorialsbooksblogs)
-  - [Acknowledgements](#acknowledgements)
+  
 
 
 
@@ -119,6 +116,8 @@ THE project followS Agile planning methods. The project board I created [Github 
 ![MoSCoW](static/readme_images/project_board_MoSCoW.PNG)
 
 ### User Stories
+
+Link to the Flavour on Fire [project board](https://github.com/users/PrajaktaSarnaik/projects/9/views/1?layout=board)
 
 | User Story | Priority |
 |----------------------------------------------------------------------------------------------------------------------------|---------------|
@@ -531,8 +530,20 @@ AI-powered code review tools help maintain clean and consistent code. They’ve 
 
 # Credits
 
-- [Django Docs](https://www.djangoproject.com/)
-- [Bootstrap Docs](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-- [Code Institute's](https://github.com/Code-Institute-Org>) 'I Think Therefore I Blog' walkthrough
-- [Pexels](https://www.pexels.com/)
-- [Unsplash](https://unsplash.com/)
+- [Code Institute](https://learn.codeinstitute.net/dashboard): Throughout the development process, I frequently relied on the 'I Think Therefore I Blog' CI walkthrough project as a helpful resource. Whenever I faced obstacles or needed clarification, I would first review this project and revisit the relevant documentation from earlier lessons on the LMS learning portal for support. With the reference of LMS I customised the models, views and templates to create my own unique website.
+- [Django Docs](https://www.djangoproject.com/): For document reference.
+- [Bootstrap](https://getbootstrap.com/): For CSS framework and bootstrap icons.
+- [Pexels](https://www.pexels.com/): For providing high-quality images.
+- [Unsplash](https://unsplash.com/): For providing high-quality images.
+- [Microsoft Designer](https://designer.microsoft.com/): For providing high-quality images.
+- [Coolors](https://coolors.co/): For generating the color palette used in the application.
+- [Am I Responsive](https://ui.dev/amiresponsive): For testing the responsiveness of the application across different devices.
+- [Google Fonts](https://fonts.google.com/): For providing the fonts used in the application.
+- [Logo Design](https://www.canva.com/) : Created using Canva to reflect the essence of the application.
+- [ERD](https://dbdiagram.io/home): For creating the Entity Relationship Diagram (ERD) used in database planning.
+- [Balsamiq](https://balsamiq.com/): For wireframe creation.
+- [Heroku](https://www.heroku.com/): For hosting the application.
+- [PostgreSQL](https://www.postgresql.org/): For database management.
+- [Chatgpt](https://chatgpt.com/): For providing high-quality images used in the application
+
+A heartfelt thanks to my mentor Emma and coding coaches Spencer and Roo who guided me throughout this project. Their valuable feedback, support and encouragement were instrumental in shaping this website into its final form.
