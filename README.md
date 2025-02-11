@@ -66,7 +66,7 @@ The design inspiration for Flavour On Fire stems from the vibrant aesthetics of 
 [Balsamiq](https://balsamiq.com/) wireframes were used during the design phase of Flavour On Fire to quickly sketch and plan the layout of the website. This tool allowed me to create low-fidelity mockups of the user interface, focusing on the structure and functionality rather than visual details. Using Balsamiq, I was able to efficiently map out key features and navigation flows, helping to clarify how users would interact with the site. The simple, hand-drawn style of the wireframes made it easier to iterate quickly, gather feedback and refine the design before moving into more detailed stages of development. This approach facilitated better collaboration and ensured that the design met the core user needs early in the process.
 
 #### Large Screen View:
-![Window View](static\readme_images\wireframes\window.PNG)
+![Window View](static/readme_images/wireframes/window.PNG)
 
 #### Tablet View:
 ![Tablet View](static\readme_images\wireframes\tablet.PNG)
