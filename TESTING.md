@@ -130,3 +130,43 @@ Here are some screenshots of validation of python files used within **Flavour** 
 
 <hr>
 
+## Manual Testing
+
+### User Input/Form Validation
+
+| Page | Element | User Action | Expected Outcome | Result | 
+| ---- | ------- | ----------- | ---------------- | ------ |
+| Sign In | Username | Enters invalid username | Error message 'Enter a valid username' | Pass |
+| Sign In | Username | Enters valid email | No error message | Pass |
+| Sign In | Password | Enters invalid password | Error message 'Incorrect email or password' | Pass |
+| Sign In | Password | Enters valid password | No error message | Pass |
+| Sign Out | Sign Out Button | Clicks Sign Out button | Redirected to Home page | Pass |
+| Recipe Detail | Add review | Enters comment | Comment displayed | Pass |
+| Recipe Detail | Edit review and rating| Clicks edit | Comment editable | Pass |
+| Recipe Detail | Update review and rating | Enters updated comment | Comment updated | Pass |
+| Recipe Detail | Delete review and rating | Clicks delete | Comment deleted | Pass |
+| Share Recipe | Recipe Name | Enters recipe name | Recipe name displayed | Pass |
+| Share Recipe | Recipe Description | Enters recipe description | Recipe description displayed | Pass |
+| Share Recipe | Ingredients | Enters ingredients | Ingredients displayed | Pass |
+| Share Recipe | Directions | Enters directions | Directions displayed | Pass |
+| Share Recipe | Upload Image | Uploads image | Image displayed | Pass |
+| Share Recipe | Submit | Clicks submit | Recipe added to database | Pass |
+
+
+### Testing User Stories
+
+| User Story | Feature | User Action | Expected Outcome | Result |
+|------------|---------|-------------|------------------|--------|
+| As a **user**, I can **register for an account** so that **I can log in and access features like reviewing, rating, and sharing recipes.** | Registration | User fills out registration form and submits | User account is created, and user is logged in | Pass |
+| As a **user**, I can **log in to my account** so that **I can use all the features of the website.** | Login | User enters valid credentials and submits | User is logged in and redirected to the home page | Pass |
+| As a **user**, I can **view recipes on the website** so that I can **explore new dishes to try.** | View Recipes | User navigates to the home page | Recipes are displayed on the home page | Pass |
+| As a **logged-in user**, I can **review and rate a recipe so that I can share my feedback and help others decide which recipes to try.** | Review and Rate Recipe | User submits a review and rating for a recipe | Review and rating are displayed on the recipe detail page | Pass |
+| As a **logged-in user**, I can **edit my reviews** so that **I can update my feedback if needed.** | Edit Review | User edits an existing review and submits | Review is updated and displayed on the recipe detail page | Pass |
+| As a **logged-in user**, I can **delete my reviews** so that **I can remove feedback I no longer wish to share.** | Delete Review | User deletes an existing review | Review is removed from the recipe detail page | Pass |
+| As an **admin**, I can **approve or delete user reviews and recipes** so that **only appropriate content is published on the website.** | Approve/Delete Reviews and Recipes | Admin approves or deletes reviews and recipes | Reviews and recipes are approved or deleted accordingly | Pass |
+| As a **visitor**, I am **prompted to log in or register if I try to review, rate, or submit a recipe** so that **unauthorized actions are prevented.** | Prompt to Log In/Register | Visitor attempts to review, rate, or submit a recipe | Visitor is prompted to log in or register | Pass |
+| As a **logged-in user**, I can **submit my own recipes** so that **I can share them with the community.** | Submit Recipe | User fills out recipe submission form and submits | Recipe is added to the database and displayed on the home page | Pass |
+| As a **registered user**, I can **log in to access the Chef's Special page,** so that **I can view exclusive special recipes that are not available on the public index page.** | Access Chef's Special Page | User logs in and navigates to the Chef's Special page | Exclusive recipes are displayed on the Chef's Special page | Pass |
+| As a **user**, I want to **print a story from the application**, so that **I can have a physical copy for offline reading or sharing.** | Print Recipe | User clicks the print button on a recipe detail page | Print dialog is displayed, and user can print the recipe | Pass |
+
+

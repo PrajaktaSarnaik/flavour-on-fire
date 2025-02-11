@@ -24,6 +24,7 @@ At its core, the project allows users to share their unique recipes, discover ch
     - [Colour Scheme](#colour-scheme)
     - [Font](#font)
 - [Project Planning](#project-planning)
+  - [Project Flow](#project-flow)
   - [Strategy Plane](#strategy-plane)
     - [Site Goals](#site-goals)
 - [Agile Methodologies - Project Management](#agile-methodologies---project-management)
@@ -85,6 +86,11 @@ For the video carousel captions, we’ve chosen Courgette, a stylish script font
 <hr>
 
 # Project Planning
+
+## Project Flow
+
+![project flow 1](static/readme_images/project_flow1.PNG)
+![project flow 2](static/readme_images/project_flow2.PNG)
 
 ## Strategy Plane
 Initially, the project focused on establishing a community-driven platform where users can easily share and discover recipes, as well as interact with chefs and other food enthusiasts. The design phase concentrated on creating an appealing and user-friendly interface, with an emphasis on visual storytelling and intuitive navigation. Once the design was finalized, the technical development phase involved implementing features such as recipe submission forms, search capabilities, and secure user accounts. After the launch, a continuous feedback loop was established to improve and iterate the platform based on real user input, ensuring it remains relevant and dynamic.
