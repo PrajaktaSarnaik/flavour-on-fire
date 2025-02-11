@@ -10,7 +10,7 @@ Flavour On Fire is an engaging and vibrant online platform designed for culinary
 
 At its core, the project allows users to share their unique recipes, discover chef’s specials and connect with culinary creators around the globe. The platform offers an intuitive interface for uploading detailed recipes, including ingredients, step-by-step instructions and captivating images of culinary creations. Users can also browse and get inspired by dishes from fellow food lovers, participate in discussions and view recipes from their favorite chefs.
 
-![Responsive Mockup](static\readme_images\am_i_responsive.PNG)
+![Responsive Mockup](static/readme_images/am_i_responsive.PNG)
 
 
 ## Table of Contents
@@ -69,13 +69,13 @@ The design inspiration for Flavour On Fire stems from the vibrant aesthetics of 
 ![Window View](static/readme_images/wireframes/window.PNG)
 
 #### Tablet View:
-![Tablet View](static\readme_images\wireframes\tablet.PNG)
+![Tablet View](static/readme_images/wireframes/tablet.PNG)
 
 #### Mobile View:
-![Mobile View](static\readme_images\wireframes\mobile.PNG)
+![Mobile View](static/readme_images/wireframes/mobile.PNG)
 
 ### Colour Scheme
-![Colour Pallete](static\readme_images\color_pallete.PNG)
+![Colour Pallete](static/readme_images/color_pallete.PNG)
 
 ### Font
 The fonts used in Flavour On Fire are carefully selected to ensure a balance between readability, elegance, and personality. For the main body text and overall website structure, the website utilizes Google’s default font, sans-serif font known for its clean and modern appearance. Its simple yet professional style ensures that the content is easy to read across all devices and screen sizes, making it perfect for presenting recipe instructions, ingredient lists, and general text.
@@ -110,7 +110,7 @@ THE project followS Agile planning methods. The project board I created [Github 
 - **Should Haves**: the components that are valuable to the project but not absolutely 'vital' at the MVP stage. The 'Must Haves' must receive priority over the 'Should Haves'.
 - **Could Haves**: these are the features that are a 'bonus' to the project, it would be nice to have them in this phase, but only if the most important issues have been completed first and time allows.
 
-![MoSCoW](static\readme_images\project_board_MoSCoW.PNG)
+![MoSCoW](static/readme_images/project_board_MoSCoW.PNG)
 
 ### User Stories
 
@@ -139,100 +139,100 @@ THE project followS Agile planning methods. The project board I created [Github 
 - It includes the logo and title, which redirect to the homepage when clicked. 
 - The navbar links direct the user to the relevant pages when clicked.
 
-![Navbar](static\readme_images\website_features\navbar.PNG)
+![Navbar](static/readme_images/website_features/navbar.PNG)
 
 ### Homepage
 - The homepage displays all recipes. 
 - Each recipe is displayed with a title, image, description and diet.
 
-![Homepage](static\readme_images\website_features\homepage.PNG)
+![Homepage](static/readme_images/website_features/homepage.PNG)
 
 ### Recipe Details
 - The recipe details page displays the title, image, description, ingredients, instructions, reviews and rating of a recipe. 
 - Logged-in users can review and rate the recipe. Users can also edit or delete their reviews.
 - Users can directly access reviews section by clicking on comments icon.
 
-![Recipe Details](static\readme_images\website_features\recipe_detail.PNG)
+![Recipe Details](static/readme_images/website_features/recipe_detail.PNG)
 
 ### Register
 - Unregistered users can register for an account by providing a username, email, and password. 
 - Passwords are hashed for security. 
 - The text boxes validate the user's input to ensure data is in the correct format. 
 
-![Register](static\readme_images\website_features\sign_up.PNG)
+![Register](static/readme_images/website_features/sign_up.PNG)
 
 ### Log In
 - Users can log in to their account using their username and password. 
 - Passwords are hashed for security. 
 - The text boxes validate the user's input to ensure data is in the correct format. 
 
-![Log In](static\readme_images\website_features\sign_in.PNG)
+![Log In](static/readme_images/website_features/sign_in.PNG)
 
 ### Log Out
 - Users can log out of their account. 
 - They are redirected to the homepage after logging out.
 
-![Log Out](static\readme_images\website_features\sign_out.PNG)
+![Log Out](static/readme_images/website_features/sign_out.PNG)
 
 ### Review a Recipe
 - Logged-in users can review and rate a recipe. 
 - They can provide a review text and a rating from 1 to 5 stars.
 
-![Review](static\readme_images\website_features\review.PNG)
+![Review](static/readme_images/website_features/review.PNG)
 
 ### Edit Review
 - Logged-in users can edit their reviews. 
 - They can update the review text and rating.
 
-![Edit Review](static\readme_images\website_features\review_edit.PNG)
+![Edit Review](static/readme_images/website_features/review_edit.PNG)
 
 ### Delete Review
 - Logged-in users can delete their reviews. 
 - They are prompted to confirm the deletion.
 
-![Delete Review](static\readme_images\website_features\delete_review.PNG)
+![Delete Review](static/readme_images/website_features/delete_review.PNG)
 
 ### Print Recipe
 - Logged-in users can print a recipe from the application to have a physical copy for offline reading or sharing.
 
-![Print Recipe](static\readme_images\website_features\print_recipe.PNG)
+![Print Recipe](static/readme_images/website_features/print_recipe.PNG)
 
 ### Our Chef
 - Users can access the Our Chefs page to view information about the chef, including a bio and image. 
 
-![Our Chef](static\readme_images\website_features\our_chef.PNG)
+![Our Chef](static/readme_images/website_features/our_chef.PNG)
 
 ### Chef's Special
 - Logged-in users can access the Chef's Special page to view exclusive special recipes that are not available on the public index page.
-![Chef's Special](static\readme_images\website_features\chef_special.PNG)
+![Chef's Special](static/readme_images/website_features/chef_special.PNG)
 
 ### Share a Recipe
 - Logged-in users can submit their own recipes. 
 - They must provide a title, image, description, ingredients, instructions and diet.
-![Share Recipe](static\readme_images\website_features\share_recipe.PNG)
+![Share Recipe](static/readme_images/website_features/share_recipe.PNG)
 
 **Admin Panel**
 
 Through Django's built-in Administration Panel, the Admin has full access over the data submitted to the website by registered Users. To access the Admin panel the Admin user adds '/admin/' to the end of the URL to display [https://flavour-on-fire-1bb1fc2c2e8e.herokuapp.com/admin/](https://flavour-on-fire-1bb1fc2c2e8e.herokuapp.com/admin/). A username and password is requested. For Flavor On Fire, Admin approval is needed for articles and comments to keep the site on topic and to prevent spamming. Registered, logged-in users' have instant access to make a booking and upload images.
 
-![Admin Panel](static\readme_images\website_features\admin_panel.PNG)
+![Admin Panel](static/readme_images/website_features/admin_panel.PNG)
 *Django Admin panel view for Flavor On Fire Administrator - content selection menu on left hand side*  
 
 Users recipes and reviews require approval by the Admin of Flavor On Fire to keep the website content on topic. 
 
 #### Dropdown menu allowing Admin to 'publish' a users article, 'Save' button must be clicked to confirm
-![Screenshot of published recipe](static\readme_images\website_features\admin_recipe_publish.PNG)
+![Screenshot of published recipe](static/readme_images/website_features/admin_recipe_publish.PNG)
 *Admin can change the status of recipes from 'Draft' to 'Published'.*
  
 #### Checkbox for allowing Admin to 'approve' a users comment, 'Save' must be clicked to confirm
-![Screenshot of comment approval](static\readme_images\website_features\admin_comment_approval.PNG) 
+![Screenshot of comment approval](static/readme_images/website_features/admin_comment_approval.PNG) 
 *Admin can approve the reviews.*
  
 ## Database Schema - Entity Relationship Diagram 
 
 The database schema for the Flavour On Fire project was designed using an Entity Relationship Diagram (ERD). This diagram visually represents the database structure, including the tables, fields and relationships between entities. The ERD for Flavour On Fire includes the following entities: User, Recipe, Review,  and Author(Chef). Each entity has specific attributes and relationships to other entities, forming a coherent and organized database schema. The ERD provides a clear overview of the database structure, facilitating the development and maintenance of the project.
 
-![ERD](static\readme_images\erd1.PNG)
+![ERD](static/readme_images/erd1.PNG)
 
 ## Security
 
