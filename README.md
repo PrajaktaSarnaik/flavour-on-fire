@@ -37,6 +37,7 @@ At its core, the project allows users to share their unique recipes, discover ch
 - [Features](#features)
   - [User View - Registered/Unregistered](#user-view---registeredunregistered)
   - [CRUD Functionality](#crud-functionality)
+  - [User Notification](#user-notification)
   - [Future Features](#future-features)
 - [Technologies \& Languages Used](#technologies--languages-used)
   - [Libraries \& Frameworks](#libraries--frameworks)
@@ -292,6 +293,27 @@ The CRUD (Create, Read, Update, Delete) functionality is a core feature of Flavo
 |-------------------|------------|----------|------------|------------|
 | **Ratings**       | Yes- Created upon registration or login        | Yes      | Yes- Created upon registration or login        | Yes        |
 | **Reviews**       | Yes- Created upon registration or login        | Yes      | Yes-Created upon registration or login        | Full review deletion is available upon registration and login, the comments dashboard clears the review automatically if a user deletes the review       |
+
+## User Notification
+
+THe website uses Django message features for success and error messages to enhance user experience by providing clear, immediate feedback for all critical interactions on the website.
+
+- **Comment Update Notifications:**
+When a user successfully updates a comment, a Django success message is triggered, informing them that their comment has been updated. This message is typically displayed at the top of the page in a styled alert box, ensuring immediate visibility.
+
+![User Notification1](static/readme_images/website_features/user_notification.PNG)
+*Django success message*
+
+
+![User Notification2](static/readme_images/website_features/user_notification2.PNG)
+*Personalized user message*
+
+
+- **Comment Deletion Notifications:**
+Upon deleting a comment, the user receives a confirmation success message indicating that the comment has been removed. This feedback helps assure users that their action was completed successfully.
+
+- **Recipe and Review Submission Feedback:**
+When users submit a recipe or review, they are notified of the status through success or error messages. If the submission is successful, a confirmation message is shown. If there's an issue (e.g., missing required fields), an error message highlights the problem.
 
 ## Future Features
 
