@@ -109,3 +109,24 @@ Here are some screenshots of validation of python files used within **Flavour** 
 
 ![urls py file](static/readme_images/python_validation/flavour_urls_py.PNG)
 *Validation of project's urls.py*
+
+### Lighthouse Scores
+
+- **Homepage :**
+
+![Homepage lighthouse score](static/readme_images/lighthouse_score/index_html_lighthouse.PNG)
+
+- **Recipe Detail Page :**
+
+![Recipe Detail lighthouse score](static/readme_images/lighthouse_score/recipe_detail_lighthouse.PNG)
+
+- **Our Chefs Page :**
+
+![Our Chefs lighthouse score](static/readme_images/lighthouse_score/our_chefs_lighthouse.PNG)
+
+- **Share Recipe Page :**
+
+![Share Recipe lighthouse score](static/readme_images/lighthouse_score/share_recipe_lighthouse.PNG)
+
+<hr>
+
